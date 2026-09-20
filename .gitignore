@@ -1,0 +1,10 @@
+# Runtime data and secrets
+acme/
+letsencrypt/
+logs/
+ssl/
+
+# Local tooling
+.DS_Store
+.idea/
+.vscode/

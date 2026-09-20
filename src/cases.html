@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功案例 | 荧耀传媒</title>
+    <meta name="description" content="荧耀传媒客户成功案例 - 真实Keepa数据，见证销量飙升">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cases.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">荧耀传媒</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="resources.html">资源库</a></li>
+                <li><a href="cases.html" class="active">成功案例</a></li>
+                <li><a href="solutions.html">解决方案</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="page-badge">结果导向</span>
+            <h1 class="page-title">成功案例</h1>
+            <p class="page-desc">真实 Keepa 数据，见证每一次销量飙升</p>
+        </div>
+    </section>
+
+    <!-- Featured Case -->
+    <section class="featured-case-section">
+        <div class="container">
+            <div class="featured-case glass-card">
+                <div class="case-header">
+                    <div class="case-badge">
+                        <i data-lucide="trophy"></i>
+                        <span>Best Seller 案例</span>
+                    </div>
+                    <div class="case-category">家居类目 · 除湿机</div>
+                </div>
+                
+                <!-- Product Info Card -->
+                <div class="product-info-card">
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i data-lucide="box"></i>
+                            <span>TABYIK</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">TABYIK 35OZ Small Dehumidifier</h3>
+                        <div class="product-meta">
+                            <span class="meta-item">
+                                <i data-lucide="tag"></i>
+                                Home & Kitchen > Dehumidifiers
+                            </span>
+                            <span class="meta-item asin-tag">
+                                <i data-lucide="barcode"></i>
+                                ASIN: B09TSZTMZ2 / B0DF53NQZC
+                            </span>
+                            <span class="meta-item price-tag">
+                                <i data-lucide="dollar-sign"></i>
+                                $43.10 - $43.27
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dark Keepa Chart -->
+                <div class="keepa-chart-container">
+                    <div class="keepa-header">
+                        <div class="keepa-logo">
+                            <span>📊</span>
+                            <span>Keepa Price History</span>
+                        </div>
+                        <div class="keepa-period">
+                            <button class="period-btn" data-period="1M">1M</button>
+                            <button class="period-btn" data-period="3M">3M</button>
+                            <button class="period-btn" data-period="1Y">1Y</button>
+                            <button class="period-btn active" data-period="ALL">ALL</button>
+                        </div>
+                    </div>
+                    
+                    <div class="keepa-chart">
+                        <!-- Y-axis labels -->
+                        <div class="chart-y-axis">
+                            <span>#100</span>
+                            <span>#1,000</span>
+                            <span>#10,000</span>
+                            <span>#50,000</span>
+                        </div>
+                        
+                        <!-- Chart area with SVG -->
+                        <div class="chart-area">
+                            <svg viewBox="0 0 800 300" class="rank-chart">
+                                <!-- Grid lines -->
+                                <defs>
+                                    <pattern id="grid" width="80" height="75" patternUnits="userSpaceOnUse">
+                                        <path d="M 80 0 L 0 0 0 75" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                                
+                                <!-- Sales Rank Line (Green, going DOWN = better) -->
+                                <path class="rank-line" 
+                                      d="M 0,20 
+                                         C 50,20 100,25 150,30
+                                         C 200,35 250,280 300,275
+                                         C 350,270 400,260 450,180
+                                         C 500,100 550,60 600,40
+                                         C 650,20 700,15 750,10
+                                         L 800,5"
+                                      fill="none" 
+                                      stroke="url(#greenGradient)" 
+                                      stroke-width="3"
+                                      stroke-linecap="round"/>
+                                
+                                <defs>
+                                    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#10B981"/>
+                                        <stop offset="100%" stop-color="#34D399"/>
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Glow effect -->
+                                <path class="rank-line-glow" 
+                                      d="M 0,20 
+                                         C 50,20 100,25 150,30
+                                         C 200,35 250,280 300,275
+                                         C 350,270 400,260 450,180
+                                         C 500,100 550,60 600,40
+                                         C 650,20 700,15 750,10
+                                         L 800,5"
+                                      fill="none" 
+                                      stroke="#10B981" 
+                                      stroke-width="8"
+                                      stroke-linecap="round"
+                                      opacity="0.3"
+                                      filter="blur(8px)"/>
+                                
+                                <!-- Annotation markers -->
+                                <g class="annotation deal-annotation">
+                                    <circle cx="275" cy="280" r="8" fill="#F97316"/>
+                                    <line x1="275" y1="260" x2="275" y2="220" stroke="#F97316" stroke-width="2" stroke-dasharray="4"/>
+                                </g>
+                                
+                                <g class="annotation kol-annotation">
+                                    <circle cx="475" cy="170" r="8" fill="#8B5CF6"/>
+                                    <line x1="475" y1="150" x2="475" y2="110" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4"/>
+                                </g>
+                            </svg>
+                            
+                            <!-- Annotation labels -->
+                            <div class="chart-annotations">
+                                <div class="annotation-label deal" style="left: 28%; top: 55%;">
+                                    <span class="annotation-dot" style="background: #F97316;"></span>
+                                    Deal 注入
+                                </div>
+                                <div class="annotation-label kol" style="left: 55%; top: 25%;">
+                                    <span class="annotation-dot" style="background: #8B5CF6;"></span>
+                                    红人视频发布
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- X-axis labels -->
+                        <div class="chart-x-axis">
+                            <span>Oct 2025</span>
+                            <span>Nov 2025</span>
+                            <span>Dec 2025</span>
+                            <span>Jan 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="keepa-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: linear-gradient(90deg, #10B981, #34D399);"></span>
+                            <span>Sales Rank</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Influencer Video Timeline -->
+                <div class="influencer-timeline">
+                    <h4 class="timeline-title">
+                        <i data-lucide="video"></i>
+                        红人视频发布时间轴
+                    </h4>
+                    <div class="timeline-container">
+                        <div class="timeline-track"></div>
+                        <div class="timeline-items">
+                            <div class="timeline-item" data-date="2024-08-24">
+                                <div class="timeline-marker kol"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2024.08.24</span>
+                                    <span class="timeline-name">ReviewsAndHowTos</span>
+                                    <span class="timeline-type">YouTube Review</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-date="2025-01-15">
+                                <div class="timeline-marker kol"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2025.01.15-18</span>
+                                    <span class="timeline-name">@Comm_Quest</span>
+                                    <span class="timeline-type">TikTok Series</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-date="2025-03-25">
+                                <div class="timeline-marker kol"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2025.03.25</span>
+                                    <span class="timeline-name">Compact Dehumidifier</span>
+                                    <span class="timeline-type">Product Review</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-date="2025-04-10">
+                                <div class="timeline-marker deal"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2025.04.10</span>
+                                    <span class="timeline-name">Deal 注入</span>
+                                    <span class="timeline-type">Slickdeals</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-date="2025-12-13">
+                                <div class="timeline-marker kol"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2025.12.13</span>
+                                    <span class="timeline-name">JRobling</span>
+                                    <span class="timeline-type">YouTube Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Before/After Comparison -->
+                <div class="comparison-section">
+                    <div class="comparison-card before">
+                        <span class="comparison-label">BEFORE</span>
+                        <div class="comparison-value">0 单/日</div>
+                        <div class="comparison-detail">
+                            <span>排名: #50,000+</span>
+                            <span>评论: 23</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-arrow">
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                    
+                    <div class="comparison-card after">
+                        <span class="comparison-label">AFTER</span>
+                        <div class="comparison-value">
+                            <i data-lucide="award"></i>
+                            Best Seller
+                        </div>
+                        <div class="comparison-detail">
+                            <span>排名: #156</span>
+                            <span>评论: 850+</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Metrics -->
+                <div class="case-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">8.4x</span>
+                        <span class="metric-label">ROI</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">12%</span>
+                        <span class="metric-label">ACOS</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">45天</span>
+                        <span class="metric-label">推广周期</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">$15K</span>
+                        <span class="metric-label">月销增长</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Cases Grid -->
+    <section class="cases-grid-section">
+        <div class="container">
+            <h2 class="section-title">更多成功案例</h2>
+            
+            <div class="cases-grid">
+                <!-- Case Card 1 -->
+                <div class="case-card glass-card">
+                    <div class="case-card-header">
+                        <span class="case-card-category">电子产品</span>
+                        <span class="case-card-result success">
+                            <i data-lucide="trending-up"></i>
+                            +580%
+                        </span>
+                    </div>
+                    <div class="case-card-chart">
+                        <svg viewBox="0 0 200 60" class="mini-chart">
+                            <path d="M 0,50 Q 50,45 80,30 T 150,15 T 200,5" 
+                                  fill="none" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="case-card-stats">
+                        <div class="stat">
+                            <span class="stat-label">投放</span>
+                            <span class="stat-value">Slickdeals</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">周期</span>
+                            <span class="stat-value">30天</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Card 2 -->
+                <div class="case-card glass-card">
+                    <div class="case-card-header">
+                        <span class="case-card-category">美妆护肤</span>
+                        <span class="case-card-result success">
+                            <i data-lucide="trending-up"></i>
+                            +320%
+                        </span>
+                    </div>
+                    <div class="case-card-chart">
+                        <svg viewBox="0 0 200 60" class="mini-chart">
+                            <path d="M 0,55 Q 30,50 60,45 T 120,20 T 200,3" 
+                                  fill="none" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="case-card-stats">
+                        <div class="stat">
+                            <span class="stat-label">投放</span>
+                            <span class="stat-value">TikTok KOL</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">周期</span>
+                            <span class="stat-value">60天</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Card 3 -->
+                <div class="case-card glass-card">
+                    <div class="case-card-header">
+                        <span class="case-card-category">户外运动</span>
+                        <span class="case-card-result success">
+                            <i data-lucide="trending-up"></i>
+                            +210%
+                        </span>
+                    </div>
+                    <div class="case-card-chart">
+                        <svg viewBox="0 0 200 60" class="mini-chart">
+                            <path d="M 0,48 Q 40,46 70,40 T 140,25 T 200,10" 
+                                  fill="none" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="case-card-stats">
+                        <div class="stat">
+                            <span class="stat-label">投放</span>
+                            <span class="stat-value">FB Group + 红人</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">周期</span>
+                            <span class="stat-value">45天</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Card 4 -->
+                <div class="case-card glass-card">
+                    <div class="case-card-header">
+                        <span class="case-card-category">宠物用品</span>
+                        <span class="case-card-result success">
+                            <i data-lucide="trending-up"></i>
+                            +450%
+                        </span>
+                    </div>
+                    <div class="case-card-chart">
+                        <svg viewBox="0 0 200 60" class="mini-chart">
+                            <path d="M 0,52 Q 35,48 65,35 T 130,15 T 200,5" 
+                                  fill="none" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="case-card-stats">
+                        <div class="stat">
+                            <span class="stat-label">投放</span>
+                            <span class="stat-value">YouTube + Deal</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">周期</span>
+                            <span class="stat-value">35天</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">客户评价</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                    </div>
+                    <p class="testimonial-text">"合作前对 Deal 站投放完全不懂，担心被坑。荧耀的顾问很专业，全程透明截图，效果超出预期。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <span class="author-name">李先生</span>
+                            <span class="author-title">深圳卖家 · 家居类目</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                    </div>
+                    <p class="testimonial-text">"红人资源质量很高，沟通效率也快。一个月内安排了 5 个 YouTube 视频，BSR 提升明显。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">W</div>
+                        <div class="author-info">
+                            <span class="author-name">王女士</span>
+                            <span class="author-title">广州卖家 · 美妆类目</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star filled"></i>
+                        <i data-lucide="star" class="star"></i>
+                    </div>
+                    <p class="testimonial-text">"Deal 审核确实比较严，有一次没通过，但团队很快安排了替代方案，整体还是很满意的。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Z</div>
+                        <div class="author-info">
+                            <span class="author-name">张先生</span>
+                            <span class="author-title">杭州卖家 · 电子类目</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box glass-card">
+                <h3>想成为下一个成功案例？</h3>
+                <p>输入您的 ASIN，免费获取产品潜力诊断报告</p>
+                <div class="cta-input-group">
+                    <input type="text" class="asin-input" placeholder="输入您的 ASIN (如 B0...)">
+                    <button class="btn-primary" id="ctaDiagnoseBtn">
+                        <i data-lucide="search"></i>
+                        免费诊断
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">✨</span>
+                        <span class="logo-text">荧耀传媒</span>
+                    </a>
+                    <p class="footer-slogan">连结全球流量，点亮销售额</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>服务</h4>
+                        <ul>
+                            <li><a href="solutions.html">Deal 站投放</a></li>
+                            <li><a href="solutions.html">红人营销</a></li>
+                            <li><a href="solutions.html">媒体 PR</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>资源</h4>
+                        <ul>
+                            <li><a href="resources.html">资源库</a></li>
+                            <li><a href="cases.html">成功案例</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 荧耀传媒 Yingyao Media. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link" data-modal="terms">服务条款</a>
+                    <span class="divider">|</span>
+                    <a href="#" class="legal-link" data-modal="privacy">隐私政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ASIN Modal (reuse from main) -->
+    <div class="modal" id="asinModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" aria-label="关闭">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-icon success">
+                    <i data-lucide="check-circle"></i>
+                </div>
+                <h3 class="modal-title">✅ 检测完成：发现爆款潜力</h3>
+                <p class="modal-text">您的 ASIN 转化率表现优异，但缺乏外部流量。已为您生成详细诊断报告。</p>
+                <div class="modal-qr">
+                    <div class="qr-placeholder">
+                        <img src="images/logos/qrcode.png" alt="微信二维码" class="real-qr-code">
+                    </div>
+                    <p class="qr-hint">扫码添加专家，领取 PDF 报告</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card modal-lg">
+            <button class="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body legal-content">
+                <h3 class="modal-title">服务条款</h3>
+                <div class="legal-text">
+                    <h4>1. 服务范围</h4>
+                    <p>荧耀传媒提供跨境电商推广服务，包括但不限于 Deal 站推广、红人合作、媒体 PR 等。所有服务内容以签订的服务协议为准。</p>
+                    
+                    <h4>2. 效果声明</h4>
+                    <p class="highlight-text">⚠️ 风险披露：推广效果受亚马逊算法、市场竞争、产品质量等多重因素影响，荧耀传媒不承诺 100% 爆单或特定销量结果。</p>
+                    
+                    <h4>3. 交付标准</h4>
+                    <p>我们承诺提供完整的交付证明，包括发帖截图、编辑确认邮件、红人沟通记录等。</p>
+                    
+                    <h4>4. 退款政策</h4>
+                    <p>如因荧耀传媒原因导致服务无法完成，将按比例退还未执行部分的费用。</p>
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('termsModal').classList.remove('active')">我已了解</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card modal-lg">
+            <button class="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body legal-content">
+                <h3 class="modal-title">隐私政策</h3>
+                <div class="legal-text">
+                    <h4>1. 信息收集</h4>
+                    <p>我们仅收集提供服务所必需的信息，包括联系方式、ASIN 等业务相关数据。</p>
+                    
+                    <h4>2. 信息使用</h4>
+                    <p>收集的信息仅用于提供推广服务和客户沟通，不会出售给第三方。</p>
+                    
+                    <h4>3. 信息保护</h4>
+                    <p>我们采取合理的安全措施保护您的信息，包括加密存储和访问控制。</p>
+                    
+                    <h4>4. 联系我们</h4>
+                    <p>如有隐私相关问题，请通过微信联系我们。</p>
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('privacyModal').classList.remove('active')">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js?v=20260113"></script>
+    <script src="js/cases.js?v=20260113"></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荧耀传媒 | 连结全球流量，点亮销售额</title>
+    <meta name="description" content="跨境电商推广专家 - Deal站投放、红人营销、媒体PR一站式服务">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">荧耀传媒</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="active">首页</a></li>
+                <li><a href="resources.html">资源库</a></li>
+                <li><a href="cases.html">成功案例</a></li>
+                <li><a href="solutions.html">解决方案</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <!-- Left: Interactive Area -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    不卖资源<br>只卖<span class="text-gradient">信任</span>与<span class="text-gradient">效率</span>
+                </h1>
+                <p class="hero-subtitle">
+                    深耕 A9, COSMO 算法优化，整合私域红人矩阵<br>
+                    用真实数据说话，让每一分推广费都花在刀刃上
+                </p>
+                
+                <!-- ASIN Search Engine -->
+                <div class="asin-search-box">
+                    <div class="search-input-wrapper">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="asinInput"
+                            class="asin-input" 
+                            placeholder="输入您的 ASIN 获取免费潜力报告..."
+                            maxlength="10"
+                        >
+                        <button id="diagnoseBtn" class="btn btn-primary asin-btn">
+                            <span class="btn-text">免费诊断</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i data-lucide="loader-2" class="spin"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <p class="search-hint">例如: B08N5WRWNW</p>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2W+</span>
+                        <span class="stat-label">服务客户</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">8.4x</span>
+                        <span class="stat-label">平均 ROI</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">12%</span>
+                        <span class="stat-label">平均 ACOS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Visual Area - 3D Data Board -->
+            <div class="hero-visual">
+                <div class="data-board">
+                    <div class="board-header">
+                        <span class="board-title">销量增长趋势</span>
+                        <span class="board-badge live">
+                            <i data-lucide="activity"></i>
+                            实时
+                        </span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="growth-chart" viewBox="0 0 300 150">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#10B981;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <path class="chart-area" d="M0,140 Q50,130 75,120 T150,80 T225,40 T300,20 L300,150 L0,150 Z" fill="url(#chartGradient)"/>
+                            <path class="chart-line" d="M0,140 Q50,130 75,120 T150,80 T225,40 T300,20" fill="none" stroke="#10B981" stroke-width="3"/>
+                            <circle cx="300" cy="20" r="6" fill="#10B981" class="pulse-dot"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Floating Cards -->
+                <div class="floating-card card-roi">
+                    <div class="card-icon success">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">ROI</span>
+                        <span class="card-value">8.4x</span>
+                    </div>
+                </div>
+
+                <div class="floating-card card-acos">
+                    <div class="card-icon info">
+                        <i data-lucide="pie-chart"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">ACOS</span>
+                        <span class="card-value">12%</span>
+                    </div>
+                </div>
+
+                <div class="floating-card card-rank">
+                    <div class="card-icon warning">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">BSR 排名</span>
+                        <span class="card-value">#128</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p class="trust-label" >深度合作平台</p>
+            <div class="trust-logos">
+                <div class="trust-logo" data-platform="Amazon">
+                    <img src="images/logos/amazon-orange3.png"  width="180" height="48" loading="eager" decoding="async">
+                </div>
+                <div class="trust-logo" data-platform="TikTok">
+                    <img src="images/logos/TIKTOK_PRIMARY_LOGO_WHITE.png"  width="180" height="48" loading="eager" decoding="async">
+                </div>
+                <div class="trust-logo" data-platform="Shopify">
+                    <img src="images/logos/shopify_logo_white.png"  width="180" height="48" loading="eager" decoding="async">
+                </div>
+                <div class="trust-logo" data-platform="Walmart">
+                    <img src="images/logos/WMT-Wordmark-Standard-TrueBlue-RGB.png"  width="180" height="48" loading="eager" decoding="async">
+                </div>
+                <div class="trust-logo" data-platform="独立站">
+                    <img src="images/logos/dulizhan(1).png" width="180" height="48" loading="eager" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">我们的服务</span>
+                <h2 class="section-title">一站式跨境推广解决方案</h2>
+                <p class="section-desc">从新品冷启动到品牌声量打造，全链路护航您的出海之旅</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1: Deal 站投放 -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="service-title">Deal 站投放</h3>
+                    <p class="service-desc">
+                        Slickdeals、Dealnews 等头部 Deal 站一手资源<br>
+                        编辑直投，确保 100% 上帖率
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>编辑资源直达</li>
+                        <li><i data-lucide="check"></i>排期透明可查</li>
+                        <li><i data-lucide="check"></i>效果数据追踪</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: 红人营销 -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="service-title">红人营销</h3>
+                    <p class="service-desc">
+                        10000+ 海外红人资源库<br>
+                        TikTok、YouTube、Instagram、Facebook 全覆盖
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>垂直领域精准匹配</li>
+                        <li><i data-lucide="check"></i>视频创意全案</li>
+                        <li><i data-lucide="check"></i>效果付费模式</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: 媒体 PR -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i data-lucide="newspaper"></i>
+                    </div>
+                    <h3 class="service-title">媒体 PR</h3>
+                    <p class="service-desc">
+                        Yahoo、Forbes、Business Insider<br>
+                        权威媒体背书，提升品牌公信力
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i>500+ 媒体资源</li>
+                        <li><i data-lucide="check"></i>SEO 外链加持</li>
+                        <li><i data-lucide="check"></i>品牌故事打造</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <!-- Seller CTA -->
+                <div class="cta-card glass-card seller-cta">
+                    <div class="cta-badge">🛒 卖家专区</div>
+                    <h3 class="cta-title">准备好爆单了吗？</h3>
+                    <p class="cta-desc">扫码领取《2026 跨境推广避坑指南》<br>揭秘 Deal 站黑幕 + A9 算法解析</p>
+                    <div class="qr-code-wrapper">
+                        <div class="qr-placeholder">
+                            <img src="images/logos/qrcode.png" alt="微信二维码" class="real-qr-code">
+                        </div>
+                    </div>
+                    <p class="cta-hint">扫码添加顾问，免费获取</p>
+                </div>
+
+                <!-- Influencer CTA -->
+                <div class="cta-card glass-card influencer-cta">
+                    <div class="cta-badge">🌟 Influencer</div>
+                    <h3 class="cta-title">Monetize Your Traffic</h3>
+                    <p class="cta-desc">Partner with verified brands<br>Fast payment via PayPal within 24h</p>
+                    <a href="https://wa.me/1234567890" class="btn btn-whatsapp" target="_blank">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                    <p class="cta-hint">Response within 2 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">✨</span>
+                        <span class="logo-text">荧耀传媒</span>
+                    </a>
+                    <p class="footer-slogan">连结全球流量，点亮销售额</p>
+                    <p class="footer-desc">Link Global Traffic, Ignite Sales</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>服务</h4>
+                        <ul>
+                            <li><a href="solutions.html">Deal 站投放</a></li>
+                            <li><a href="solutions.html">红人营销</a></li>
+                            <li><a href="solutions.html">媒体 PR</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>资源</h4>
+                        <ul>
+                            <li><a href="resources.html">资源库</a></li>
+                            <li><a href="cases.html">成功案例</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>合作</h4>
+                        <ul>
+                            <li><a href="influencer.html">红人入驻</a></li>
+                            <li><a href="#">媒体合作</a></li>
+                            <li><a href="#">代理加盟</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 荧耀传媒 Yingyao Media. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link" data-modal="terms">服务条款</a>
+                    <span class="divider">|</span>
+                    <a href="#" class="legal-link" data-modal="privacy">隐私政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ASIN Diagnosis Modal -->
+    <div class="modal" id="diagnosisModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-icon success">
+                    <i data-lucide="check-circle"></i>
+                </div>
+                <h3 class="modal-title">✅ 检测完成：发现爆款潜力</h3>
+            </div>
+            
+            <div class="modal-body">
+                <div class="diagnosis-result">
+                    <p class="result-text">
+                        您的 ASIN <strong id="resultAsin">B08XXXXXX</strong> 转化率表现优异，但缺乏外部流量注入。
+                    </p>
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-label">转化潜力</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 85%;"></div>
+                            </div>
+                            <span class="metric-value">85%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">流量缺口</span>
+                            <div class="metric-bar warning">
+                                <div class="metric-fill" style="width: 70%;"></div>
+                            </div>
+                            <span class="metric-value">70%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-cta">
+                    <p class="cta-text">已为您生成详细诊断报告</p>
+                    <div class="qr-code-wrapper">
+                        <div class="qr-placeholder large">
+                            <img src="images/logos/qrcode.png" alt="微信二维码" class="real-qr-code">
+                        </div>
+                    </div>
+                    <p class="cta-hint">扫码添加专家，领取 PDF 报告</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card modal-lg">
+            <button class="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body legal-content">
+                <h3 class="modal-title">服务条款</h3>
+                <div class="legal-text">
+                    <h4>1. 服务范围</h4>
+                    <p>荧耀传媒提供跨境电商推广服务，包括但不限于 Deal 站推广、红人合作、媒体 PR 等。所有服务内容以签订的服务协议为准。</p>
+                    
+                    <h4>2. 效果声明</h4>
+                    <p class="highlight-text">⚠️ 风险披露：推广效果受亚马逊算法、市场竞争、产品质量等多重因素影响，荧耀传媒不承诺 100% 爆单或特定销量结果。</p>
+                    
+                    <h4>3. 交付标准</h4>
+                    <p>我们承诺提供完整的交付证明，包括发帖截图、编辑确认邮件、红人沟通记录等。</p>
+                    
+                    <h4>4. 退款政策</h4>
+                    <p>如因荧耀传媒原因导致服务无法完成，将按比例退还未执行部分的费用。</p>
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('termsModal').classList.remove('active')">我已了解</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-card modal-lg">
+            <button class="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body legal-content">
+                <h3 class="modal-title">隐私政策</h3>
+                <div class="legal-text">
+                    <h4>1. 信息收集</h4>
+                    <p>我们仅收集提供服务所必需的信息，包括联系方式、ASIN 等业务相关数据。</p>
+                    
+                    <h4>2. 信息使用</h4>
+                    <p>收集的信息仅用于提供推广服务和客户沟通，不会出售给第三方。</p>
+                    
+                    <h4>3. 信息保护</h4>
+                    <p>我们采取合理的安全措施保护您的信息，包括加密存储和访问控制。</p>
+                    
+                    <h4>4. 联系我们</h4>
+                    <p>如有隐私相关问题，请通过微信联系我们。</p>
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('privacyModal').classList.remove('active')">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js?v=20260113"></script>
+</body>
+</html>

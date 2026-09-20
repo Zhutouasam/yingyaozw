@@ -1,0 +1,2574 @@
+/* ========================================
+   Resources Page Styles
+   荧耀传媒 - 资源库页面
+   ======================================== */
+
+/* Page Header */
+.page-header {
+    padding: 140px 0 60px;
+    text-align: center;
+    background: radial-gradient(ellipse at center top, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+}
+
+.page-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.page-desc {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 60px 0 100px;
+}
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn i {
+    width: 20px;
+    height: 20px;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    min-height: 400px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resource Grid */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* Resource Card */
+.resource-card {
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.resource-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.resource-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.resource-badge i {
+    width: 14px;
+    height: 14px;
+}
+
+.resource-badge.success {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent);
+}
+
+.resource-badge.pending {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+.resource-badge.info {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.resource-date {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.resource-preview {
+    min-height: 180px;
+    margin-bottom: 20px;
+}
+
+.resource-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.resource-source {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.resource-source i {
+    width: 16px;
+    height: 16px;
+}
+
+.resource-type {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    background: var(--glass-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Email Preview Mock */
+.email-preview {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.email-mock {
+    padding: 20px;
+}
+
+.email-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.email-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: white;
+}
+
+.email-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.email-from {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+}
+
+.email-subject {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.email-body {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.email-body p {
+    margin-bottom: 8px;
+}
+
+.highlight-text {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.email-status {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.status-badge {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Deal Stats */
+.deal-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.deal-metric {
+    text-align: center;
+}
+
+.metric-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.deal-metric .metric-value,
+.deal-stats .metric-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    flex: unset;
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+/* Queue Preview */
+.queue-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.queue-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.queue-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.queue-text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+.queue-note {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Chat Preview (WhatsApp style) */
+.chat-preview {
+    background: linear-gradient(180deg, #0d1418 0%, #0b141a 100%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chat-mock {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    position: relative;
+}
+
+.chat-message.incoming {
+    background: #1f2c34;
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-message.outgoing {
+    background: #005c4b;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-text {
+    display: block;
+    line-height: 1.4;
+}
+
+.chat-time {
+    display: block;
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* KOL Matrix */
+.kol-matrix .resource-preview {
+    padding: 20px;
+}
+
+.kol-avatars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.kol-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.kol-avatar.more {
+    background: var(--glass-bg);
+    border: 2px dashed var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.kol-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.kol-stat {
+    text-align: center;
+}
+
+.kol-stat .stat-value {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.kol-stat .stat-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+/* TikTok Stats */
+.tiktok-stats {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.tiktok-video-mock {
+    text-align: center;
+}
+
+.video-placeholder {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 12px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-placeholder i {
+    width: 48px;
+    height: 48px;
+    color: var(--text-muted);
+}
+
+.video-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9375rem;
+}
+
+/* Media Article Preview */
+.article-preview {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.article-mock {
+    padding: 20px;
+}
+
+.article-source {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.source-logo {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #6001d2 0%, #410093 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+}
+
+.source-name {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.article-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.article-excerpt {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Media Outlets List */
+.media-list .resource-preview {
+    padding: 16px;
+}
+
+.media-outlets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.media-outlets li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.media-outlets li:last-child {
+    border-bottom: none;
+}
+
+.outlet-name {
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+
+.outlet-da {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.15);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.media-count {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* SEO Preview */
+.seo-preview {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.seo-benefit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.seo-benefit i {
+    width: 32px;
+    height: 32px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.seo-benefit .benefit-title {
+    display: block;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.seo-benefit .benefit-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+/* Resource Note */
+.resource-note {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: 12px;
+}
+
+.resource-note i {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.resource-note p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 60px 0 100px;
+}
+
+.cta-box {
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.02) 100%);
+}
+
+.cta-box h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.cta-box p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-code-wrapper {
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+}
+
+.qr-placeholder {
+    width: 160px;
+    height: 160px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.qr-placeholder i {
+    width: 48px;
+    height: 48px;
+    color: #999;
+}
+
+.qr-placeholder span {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+/* ========================================
+   Influencer Video Tab Styles
+   ======================================== */
+
+/* Amazon Listing Preview */
+.amazon-listing-preview {
+    background: linear-gradient(180deg, #232f3e 0%, #131a22 100%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.amazon-listing-mock {
+    padding: 16px;
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.amazon-logo {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ff9900;
+    letter-spacing: -0.5px;
+}
+
+.listing-badge {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #ff9900;
+    background: rgba(255, 153, 0, 0.15);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.listing-video-section {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.video-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.video-section-title i {
+    width: 16px;
+    height: 16px;
+    color: #ff9900;
+}
+
+.video-carousel {
+    display: flex;
+    gap: 8px;
+}
+
+.video-thumb {
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.video-thumb i {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.video-thumb.active {
+    border-color: #ff9900;
+    box-shadow: 0 0 12px rgba(255, 153, 0, 0.4);
+}
+
+.video-thumb .video-badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+    background: #ff9900;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.video-thumb.more {
+    background: var(--glass-bg);
+    border: 2px dashed var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.listing-info {
+    padding-top: 8px;
+}
+
+.listing-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.listing-desc {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.resource-type.highlight {
+    background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Influencer Tier List */
+.influencer-tier-card .resource-preview {
+    padding: 16px;
+}
+
+.influencer-tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.influencer-tier-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.influencer-tier-list li:last-child {
+    border-bottom: none;
+}
+
+.tier-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.tier-tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tier-tag.weight-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.tier-tag.official {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.tier-tag.expert {
+    background: rgba(139, 92, 246, 0.15);
+    color: #8b5cf6;
+}
+
+.tier-tag.lifestyle {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.tier-tag.featured {
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+}
+
+.tier-count {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+    margin: 0;
+}
+
+/* Video Benefits */
+.video-benefits-card .resource-preview {
+    padding: 16px;
+}
+
+.video-benefits-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.video-benefits-preview .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.video-benefits-preview .benefit-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateX(4px);
+}
+
+.video-benefits-preview .benefit-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.video-benefits-preview .benefit-icon i {
+    width: 24px;
+    height: 24px;
+}
+
+.video-benefits-preview .benefit-icon.shield {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+}
+
+.video-benefits-preview .benefit-icon.shield i {
+    color: #3b82f6;
+}
+
+.video-benefits-preview .benefit-icon.chart {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+.video-benefits-preview .benefit-icon.chart i {
+    color: #10b981;
+}
+
+.video-benefits-preview .benefit-icon.link {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.video-benefits-preview .benefit-icon.link i {
+    color: #8b5cf6;
+}
+
+.video-benefits-preview .benefit-content {
+    flex: 1;
+}
+
+.video-benefits-preview .benefit-title {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-size: 0.9375rem;
+}
+
+.video-benefits-preview .benefit-desc {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ========================================
+   Deal Logo Carousel Styles
+   ======================================== */
+
+/* 轮播区域容器 */
+.deals-carousel-section {
+    margin-bottom: 32px;
+}
+
+/* 轮播头部 */
+.carousel-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.carousel-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.carousel-title i {
+    width: 28px;
+    height: 28px;
+    color: var(--primary);
+}
+
+.carousel-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* 轮播容器 - 玻璃效果卡片 */
+.deals-carousel {
+    position: relative;
+    padding: 40px 60px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* 轮播视口 */
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* 轮播轨道 */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* 单个轮播项 */
+.carousel-slide {
+    flex: 0 0 33.333%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Logo 项目容器 */
+.deal-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.deal-logo-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(249, 115, 22, 0.1);
+}
+
+/* Logo 图片样式 */
+.deal-logo-item img {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(30%) brightness(0.9);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.deal-logo-item:hover img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 轮播箭头 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-arrow:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow i {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-prev {
+    left: 12px;
+}
+
+.carousel-next {
+    right: 12px;
+}
+
+/* 轮播箭头禁用状态（循环轮播时不需要，但保留样式） */
+.carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-arrow:disabled:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    box-shadow: none;
+}
+
+/* 指示点容器 */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+/* 单个指示点 */
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+    transform: scale(1.2);
+}
+
+/* 统计信息区域 */
+.carousel-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    margin-top: 40px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+.carousel-stats .stat-item {
+    text-align: center;
+}
+
+.carousel-stats .stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.carousel-stats .stat-label {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+.carousel-stats .stat-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+}
+
+/* ========================================
+   Deal Carousel Responsive Styles
+   ======================================== */
+
+/* 平板设备 */
+@media (max-width: 992px) {
+    .deals-carousel {
+        padding: 32px 50px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 50%; /* 每次显示 2 个 */
+    }
+    
+    .carousel-stats {
+        gap: 32px;
+    }
+    
+    .carousel-stats .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* 手机设备 */
+@media (max-width: 640px) {
+    .deals-carousel {
+        padding: 24px 16px;
+    }
+    
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .carousel-arrow i {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .carousel-prev {
+        left: 4px;
+    }
+    
+    .carousel-next {
+        right: 4px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 100%; /* 每次显示 1 个 */
+        padding: 0 8px;
+    }
+    
+    .deal-logo-item {
+        height: 100px;
+        padding: 16px;
+    }
+    
+    .deal-logo-item img {
+        max-height: 60px;
+    }
+    
+    .carousel-stats {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+    }
+    
+    .carousel-stats .stat-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+    }
+    
+    .carousel-dots {
+        gap: 8px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* ========================================
+   Original Responsive Styles
+   ======================================== */
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 120px 0 40px;
+    }
+
+    .tab-nav {
+        gap: 8px;
+    }
+
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 0.875rem;
+    }
+
+    .tab-btn i {
+        display: none;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .resource-card {
+        padding: 20px;
+    }
+
+    .kol-stats {
+        gap: 24px;
+    }
+
+    .deal-stats {
+        padding: 16px;
+    }
+
+    .deal-metric {
+        padding: 8px;
+    }
+
+    .metric-value {
+        font-size: 1.75rem;
+    }
+
+    .cta-box {
+        padding: 40px 20px;
+    }
+
+    .cta-box h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   FB Group Carousel Styles
+   ======================================== */
+
+/* FB Group 轮播区域容器 */
+.fbgroup-carousel-section {
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+/* FB Group 轮播容器 - 玻璃效果卡片 */
+.fbgroup-carousel {
+    position: relative;
+    padding: 40px 60px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* FB Group 单个轮播项 */
+.fbgroup-slide {
+    flex: 0 0 33.333%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* FB Group 卡片样式 */
+.fbgroup-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fbgroup-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(24, 119, 242, 0.4);
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(24, 119, 242, 0.15);
+}
+
+/* FB Group 封面图片区域 */
+.fbgroup-cover {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.fbgroup-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.fbgroup-card:hover .fbgroup-cover img {
+    transform: scale(1.08);
+}
+
+/* Facebook 平台图标 */
+.fbgroup-platform {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: #1877f2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+}
+
+.fbgroup-platform svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* FB Group 信息区域 */
+.fbgroup-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* 群组名称 */
+.fbgroup-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em;
+}
+
+/* 群组描述 */
+.fbgroup-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+/* 底部区域：国旗和价格 */
+.fbgroup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+/* 国旗标识 */
+.fbgroup-flag {
+    font-size: 1.25rem;
+}
+
+/* 价格显示 */
+.fbgroup-price {
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.fbgroup-price.has-price {
+    color: var(--accent);
+}
+
+.fbgroup-price.has-price em {
+    font-style: normal;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.fbgroup-price.no-price {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* FB Group 轮播轨道 */
+.fbgroup-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ========================================
+   FB Group Carousel Responsive Styles
+   ======================================== */
+
+/* 平板设备 */
+@media (max-width: 992px) {
+    .fbgroup-carousel {
+        padding: 32px 50px;
+    }
+    
+    .fbgroup-slide {
+        flex: 0 0 50%; /* 每次显示 2 个 */
+    }
+    
+    .fbgroup-cover {
+        height: 140px;
+    }
+}
+
+/* 手机设备 */
+@media (max-width: 640px) {
+    .fbgroup-carousel-section {
+        margin-top: 32px;
+    }
+    
+    .fbgroup-carousel {
+        padding: 24px 16px;
+    }
+    
+    .fbgroup-slide {
+        flex: 0 0 100%; /* 每次显示 1 个 */
+        padding: 0 8px;
+    }
+    
+    .fbgroup-cover {
+        height: 180px;
+    }
+    
+    .fbgroup-info {
+        padding: 14px;
+    }
+    
+    .fbgroup-name {
+        font-size: 1rem;
+    }
+    
+    .fbgroup-desc {
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   TikTok KOL Carousel Styles
+   ======================================== */
+
+/* TikTok KOL 轮播区域容器 */
+.tkkol-carousel-section {
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+/* 标题副标题样式 */
+.carousel-title-sub {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 4px;
+}
+
+/* TikTok KOL 轮播容器 - 玻璃效果卡片 */
+.tkkol-carousel {
+    position: relative;
+    padding: 40px 60px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* TikTok KOL 单个轮播项 */
+.tkkol-slide {
+    flex: 0 0 50%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* TikTok KOL 卡片样式 */
+.tkkol-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tkkol-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 80, 0.4);
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(255, 0, 80, 0.15);
+}
+
+/* 卡片主体内容区域 */
+.tkkol-main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+}
+
+/* 封面图片区域 */
+.tkkol-cover {
+    position: relative;
+    width: 170px;
+    min-width: 170px;
+    height: 110px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TikTok 图标占位 */
+.tkkol-cover::before {
+    content: '♪';
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.tkkol-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* 图片加载失败时隐藏 */
+.tkkol-cover img[src=""],
+.tkkol-cover img:not([src]) {
+    display: none;
+}
+
+.tkkol-card:hover .tkkol-cover img {
+    transform: scale(1.08);
+}
+
+/* 红人编号标识 */
+.tkkol-id {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tkkol-code {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.tkkol-region {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: white;
+    background: #10b981;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+/* 信息区域 */
+.tkkol-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* 红人名称 */
+.tkkol-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 标签区域 */
+.tkkol-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tkkol-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.tkkol-tag.followers {
+    background: rgba(255, 0, 80, 0.15);
+    color: #ff0050;
+}
+
+.tkkol-tag.rate {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.tkkol-tag.category {
+    background: rgba(99, 102, 241, 0.12);
+    color: #818cf8;
+}
+
+/* 评分区域 */
+.tkkol-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.rating-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.rating-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.tkkol-cycle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-left: 12px;
+}
+
+/* 描述文字 */
+.tkkol-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+/* 底部区域 */
+.tkkol-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--border-color);
+}
+
+/* 平台图标 */
+.tkkol-platforms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tkkol-platforms img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+/* 价格区域 */
+.tkkol-price {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.tkkol-price .price-original {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.tkkol-price .price-label {
+    font-size: 0.6875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tkkol-price .price-value {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #fbbf24;
+    line-height: 1;
+}
+
+/* TikTok KOL 轮播轨道 */
+.tkkol-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ========================================
+   TikTok KOL Carousel Responsive Styles
+   ======================================== */
+
+/* 平板设备 */
+@media (max-width: 992px) {
+    .tkkol-carousel {
+        padding: 32px 50px;
+    }
+    
+    .tkkol-slide {
+        flex: 0 0 100%; /* 每次显示 1 个 */
+    }
+    
+    .tkkol-main {
+        flex-direction: column;
+    }
+    
+    .tkkol-cover {
+        width: 100%;
+        height: 160px;
+    }
+}
+
+/* 手机设备 */
+@media (max-width: 640px) {
+    .tkkol-carousel-section {
+        margin-top: 32px;
+    }
+    
+    .tkkol-carousel {
+        padding: 24px 16px;
+    }
+    
+    .tkkol-slide {
+        flex: 0 0 100%;
+        padding: 0 8px;
+    }
+    
+    .tkkol-main {
+        padding: 16px;
+        gap: 16px;
+    }
+    
+    .tkkol-cover {
+        width: 100%;
+        height: 140px;
+    }
+    
+    .tkkol-name {
+        font-size: 1rem;
+    }
+    
+    .tkkol-tags {
+        gap: 6px;
+    }
+    
+    .tkkol-tag {
+        font-size: 0.6875rem;
+        padding: 3px 8px;
+    }
+    
+    .tkkol-footer {
+        padding: 12px 16px;
+    }
+    
+    .tkkol-price .price-value {
+        font-size: 1.125rem;
+    }
+}
+
+/* ========================================
+   TikTok KOL CTA Button Styles
+   ======================================== */
+
+/* CTA 咨询按钮 */
+.tkkol-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    white-space: nowrap;
+}
+
+.tkkol-cta:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(249, 115, 22, 0.4),
+        0 0 20px rgba(249, 115, 22, 0.2);
+    background: linear-gradient(135deg, #fb923c 0%, var(--primary) 100%);
+}
+
+.tkkol-cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
+}
+
+.tkkol-cta i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* CTA 按钮响应式 */
+@media (max-width: 640px) {
+    .tkkol-cta {
+        padding: 8px 16px;
+        font-size: 0.8125rem;
+        gap: 6px;
+    }
+    
+    .tkkol-cta i {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ========================================
+   Guide Card Styles (引导卡片)
+   ======================================== */
+
+/* 通用引导卡片样式 */
+.guide-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 280px;
+}
+
+.guide-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.08) 0%,
+        rgba(249, 115, 22, 0.02) 100%
+    );
+    border: 2px dashed rgba(249, 115, 22, 0.3);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 320px;
+    transition: all 0.3s ease;
+}
+
+.guide-card-content:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.12) 0%,
+        rgba(249, 115, 22, 0.04) 100%
+    );
+    border-color: rgba(249, 115, 22, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+}
+
+/* 图标容器 */
+.guide-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(249, 115, 22, 0.5);
+    }
+}
+
+.guide-icon-wrapper i {
+    width: 36px;
+    height: 36px;
+    color: white;
+}
+
+/* 引导卡片标题 */
+.guide-card-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+/* 引导卡片描述 */
+.guide-card-content p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+
+/* 引导卡片按钮 */
+.guide-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+    color: white;
+    border: none;
+    border-radius: 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+}
+
+.guide-card-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(249, 115, 22, 0.45),
+        0 0 30px rgba(249, 115, 22, 0.25);
+    background: linear-gradient(135deg, #fb923c 0%, var(--primary) 100%);
+}
+
+.guide-card-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.35);
+}
+
+.guide-card-btn i {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* 统计信息 */
+.guide-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.guide-stats .stat-item {
+    text-align: center;
+}
+
+.guide-stats .stat-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.guide-stats .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ========================================
+   Deal 站引导卡片变体 (紧凑版)
+   匹配 deal-logo-item 的 120px 高度
+   ======================================== */
+
+/* Deal 引导卡片容器 - 匹配 deal-logo-item 尺寸 */
+.deal-guide.guide-card {
+    min-height: auto;
+    height: 120px;
+}
+
+/* Deal 引导卡片内容 - 紧凑布局 */
+.deal-guide .guide-card-content {
+    padding: 12px 16px;
+    max-width: 240px;
+    width: auto;
+    height: 100%;
+    flex-direction: row;
+    gap: 12px;
+    border-color: rgba(249, 115, 22, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.08) 0%,
+        rgba(249, 115, 22, 0.02) 100%
+    );
+}
+
+.deal-guide .guide-card-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.2);
+}
+
+/* Deal 引导卡片图标 - 缩小尺寸 */
+.deal-guide .guide-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+}
+
+.deal-guide .guide-icon-wrapper i {
+    width: 24px;
+    height: 24px;
+}
+
+/* Deal 引导卡片文字区域 */
+.deal-guide .guide-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.deal-guide .guide-card-content h4 {
+    font-size: 1rem;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+}
+
+.deal-guide .guide-card-content p {
+    font-size: 0.75rem;
+    margin: 0;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Deal 引导卡片按钮 - 紧凑版 */
+.deal-guide .guide-card-btn {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.deal-guide .guide-card-btn i {
+    width: 16px;
+    height: 16px;
+}
+
+/* Deal 引导卡片响应式 - 平板 */
+@media (max-width: 992px) {
+    .deal-guide.guide-card {
+        height: 100px;
+    }
+    
+    .deal-guide .guide-card-content {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    
+    .deal-guide .guide-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    
+    .deal-guide .guide-icon-wrapper i {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .deal-guide .guide-card-content h4 {
+        font-size: 0.9375rem;
+    }
+    
+    .deal-guide .guide-card-content p {
+        font-size: 0.6875rem;
+    }
+    
+    .deal-guide .guide-card-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .deal-guide .guide-card-btn i {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Deal 引导卡片响应式 - 手机 */
+@media (max-width: 640px) {
+    .deal-guide.guide-card {
+        height: 100px;
+    }
+    
+    .deal-guide .guide-card-content {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    .deal-guide .guide-icon-wrapper {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+    
+    .deal-guide .guide-icon-wrapper i {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .deal-guide .guide-card-content h4 {
+        font-size: 0.875rem;
+    }
+    
+    .deal-guide .guide-card-content p {
+        display: none;
+    }
+    
+    .deal-guide .guide-card-btn {
+        padding: 6px 10px;
+        font-size: 0.6875rem;
+        gap: 4px;
+    }
+    
+    .deal-guide .guide-card-btn i {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* ========================================
+   FB Group 引导卡片变体
+   ======================================== */
+
+.fbgroup-guide .guide-card-content {
+    border-color: rgba(24, 119, 242, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(24, 119, 242, 0.08) 0%,
+        rgba(24, 119, 242, 0.02) 100%
+    );
+}
+
+.fbgroup-guide .guide-card-content:hover {
+    border-color: rgba(24, 119, 242, 0.5);
+    background: linear-gradient(
+        135deg,
+        rgba(24, 119, 242, 0.12) 0%,
+        rgba(24, 119, 242, 0.04) 100%
+    );
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.15);
+}
+
+.fbgroup-guide .guide-icon-wrapper {
+    background: linear-gradient(135deg, #1877f2 0%, #0a5dc2 100%);
+    box-shadow: 0 8px 24px rgba(24, 119, 242, 0.3);
+    animation: pulse-glow-fb 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-fb {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(24, 119, 242, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(24, 119, 242, 0.5);
+    }
+}
+
+.fbgroup-guide .guide-card-btn {
+    background: linear-gradient(135deg, #1877f2 0%, #0a5dc2 100%);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.35);
+}
+
+.fbgroup-guide .guide-card-btn:hover {
+    background: linear-gradient(135deg, #4293f5 0%, #1877f2 100%);
+    box-shadow:
+        0 12px 30px rgba(24, 119, 242, 0.45),
+        0 0 30px rgba(24, 119, 242, 0.25);
+}
+
+.fbgroup-guide .guide-stats .stat-value {
+    color: #1877f2;
+}
+
+/* ========================================
+   TikTok KOL 引导卡片变体
+   ======================================== */
+
+.tkkol-guide .guide-card-content {
+    border-color: rgba(255, 0, 80, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 80, 0.08) 0%,
+        rgba(0, 242, 234, 0.04) 100%
+    );
+}
+
+.tkkol-guide .guide-card-content:hover {
+    border-color: rgba(255, 0, 80, 0.5);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 80, 0.12) 0%,
+        rgba(0, 242, 234, 0.06) 100%
+    );
+    box-shadow: 0 12px 40px rgba(255, 0, 80, 0.15);
+}
+
+.tkkol-guide .guide-icon-wrapper {
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+    box-shadow: 0 8px 24px rgba(255, 0, 80, 0.3);
+    animation: pulse-glow-tk 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-tk {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(255, 0, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(255, 0, 80, 0.5);
+    }
+}
+
+/* TikTok 按钮特殊渐变 */
+.tkkol-btn {
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%) !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 80, 0.35);
+}
+
+.tkkol-btn:hover {
+    background: linear-gradient(135deg, #ff3371 0%, #33f5ef 100%) !important;
+    box-shadow:
+        0 12px 30px rgba(255, 0, 80, 0.45),
+        0 0 30px rgba(0, 242, 234, 0.25) !important;
+}
+
+/* TikTok 图标样式 */
+.tkkol-icon i {
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tkkol-guide .guide-stats .stat-value {
+    color: #ff0050;
+}
+
+/* ========================================
+   引导卡片响应式样式
+   ======================================== */
+
+@media (max-width: 992px) {
+    .guide-card {
+        min-height: 260px;
+    }
+    
+    .guide-card-content {
+        padding: 28px 20px;
+    }
+    
+    .guide-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 16px;
+    }
+    
+    .guide-icon-wrapper i {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .guide-card-content h4 {
+        font-size: 1.125rem;
+    }
+    
+    .guide-card-content p {
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+    }
+    
+    .guide-card-btn {
+        padding: 12px 24px;
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .guide-card {
+        min-height: 240px;
+    }
+    
+    .guide-card-content {
+        padding: 24px 16px;
+        max-width: 280px;
+    }
+    
+    .guide-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 14px;
+    }
+    
+    .guide-icon-wrapper i {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .guide-card-content h4 {
+        font-size: 1rem;
+    }
+    
+    .guide-card-content p {
+        font-size: 0.8125rem;
+        margin-bottom: 16px;
+    }
+    
+    .guide-card-btn {
+        padding: 10px 20px;
+        font-size: 0.875rem;
+        gap: 6px;
+    }
+    
+    .guide-card-btn i {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .guide-stats {
+        gap: 16px;
+        margin-top: 16px;
+        padding-top: 14px;
+    }
+    
+    .guide-stats .stat-value {
+        font-size: 1.125rem;
+    }
+    
+    .guide-stats .stat-label {
+        font-size: 0.6875rem;
+    }
+}
