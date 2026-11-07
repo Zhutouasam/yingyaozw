@@ -1,0 +1,93 @@
+{
+  "_images-B_plZ8jw.js": {
+    "file": "assets/images-B_plZ8jw.js",
+    "name": "images",
+    "imports": [
+      "_site-brand-C7djIvFu.js"
+    ]
+  },
+  "_search-DEi8p_KO.js": {
+    "file": "assets/search-DEi8p_KO.js",
+    "name": "search",
+    "imports": [
+      "_site-brand-C7djIvFu.js"
+    ]
+  },
+  "_site-brand-C7djIvFu.js": {
+    "file": "assets/site-brand-C7djIvFu.js",
+    "name": "site-brand",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_wechat-dialog-Dz435_SN.css": {
+    "file": "assets/wechat-dialog-Dz435_SN.css",
+    "src": "_wechat-dialog-Dz435_SN.css"
+  },
+  "_wechat-dialog-jUdnyBVG.js": {
+    "file": "assets/wechat-dialog-jUdnyBVG.js",
+    "name": "wechat-dialog",
+    "imports": [
+      "_site-brand-C7djIvFu.js"
+    ],
+    "css": [
+      "assets/wechat-dialog-Dz435_SN.css"
+    ]
+  },
+  "index.html": {
+    "file": "assets/index-C8NLAJgE.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/admin.jsx",
+      "src/catalog.jsx",
+      "src/home-entry.jsx"
+    ],
+    "css": [
+      "assets/index-CFGOgKrc.css"
+    ]
+  },
+  "src/admin.jsx": {
+    "file": "assets/admin-x6d7iwOU.js",
+    "name": "admin",
+    "src": "src/admin.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_site-brand-C7djIvFu.js",
+      "_search-DEi8p_KO.js",
+      "_images-B_plZ8jw.js"
+    ],
+    "css": [
+      "assets/admin-CVJ9E4a7.css"
+    ]
+  },
+  "src/catalog.jsx": {
+    "file": "assets/catalog-DpBxDfAV.js",
+    "name": "catalog",
+    "src": "src/catalog.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_site-brand-C7djIvFu.js",
+      "_wechat-dialog-jUdnyBVG.js",
+      "_search-DEi8p_KO.js"
+    ],
+    "css": [
+      "assets/catalog-DZ9SdaRR.css"
+    ]
+  },
+  "src/home-entry.jsx": {
+    "file": "assets/home-entry-DUjBiaA6.js",
+    "name": "home-entry",
+    "src": "src/home-entry.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_site-brand-C7djIvFu.js",
+      "_wechat-dialog-jUdnyBVG.js",
+      "_images-B_plZ8jw.js"
+    ],
+    "css": [
+      "assets/home-entry-QsdctyWH.css"
+    ]
+  }
+}

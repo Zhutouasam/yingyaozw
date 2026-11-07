@@ -1,0 +1,10 @@
+services:
+  nginx:
+    networks:
+      default:
+      yingyao-network:
+      admin_edge:
+networks:
+  admin_edge:
+    name: yingyao-admin-v2_edge
+    external: true

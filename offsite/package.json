@@ -1,0 +1,23 @@
+{
+  "name": "yingyao-offsite",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "node --env-file-if-exists=.env scripts/build.mjs",
+    "preview": "vite preview",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "test:backend": "node --test server/*.test.mjs",
+    "sync:pricing": "node scripts/sync-snow123.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
+}

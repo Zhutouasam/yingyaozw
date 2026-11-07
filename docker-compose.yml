@@ -8,10 +8,14 @@ services:
       - "443:443"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/security-headers.conf:/etc/nginx/snippets/security-headers.conf:ro
       - ./src:/usr/share/nginx/html:ro
       - ./acme:/var/www/acme:ro
       - ./ssl:/etc/nginx/ssl:ro
       - ./logs:/var/log/nginx
+    networks:
+      - default
+      - yingyao-network
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider --no-check-certificate https://127.0.0.1/"]
       interval: 30s
@@ -20,3 +24,60 @@ services:
       start_period: 10s
     environment:
       - TZ=Asia/Shanghai
+
+  app:
+    build:
+      context: ${NOON_SOURCE_DIR:-/root/.codex/code_project/noon}
+      dockerfile: Dockerfile
+    image: yingyao-static-app
+    container_name: yingyao-noon-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://yingyaozw.com}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://postgres:postgres@db:5432/radiance_store?schema=public}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-}
+      PORT: 3000
+      TZ: Asia/Shanghai
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - yingyao-network
+
+  db:
+    image: postgres:16-alpine
+    container_name: yingyao-noon-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: radiance_store
+      TZ: Asia/Shanghai
+    volumes:
+      - noon-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d radiance_store"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - yingyao-network
+
+volumes:
+  noon-pgdata:
+
+networks:
+  yingyao-network:
+    external: true
+    name: ${NOON_NETWORK_NAME:-yingyao-static_yingyao-network}

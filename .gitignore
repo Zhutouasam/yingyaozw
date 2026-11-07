@@ -1,4 +1,5 @@
 # Runtime data and secrets
+.env
 acme/
 letsencrypt/
 logs/
@@ -8,3 +9,12 @@ ssl/
 .DS_Store
 .idea/
 .vscode/
+
+# Offsite runtime data and local dependencies
+**/._*
+**/node_modules/
+offsite/.env
+offsite/server/data/
+offsite/data/
+*.sqlite
+*.sqlite-*
