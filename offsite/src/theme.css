@@ -1,0 +1,114 @@
+:root {
+  --yy-font:
+    -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --yy-orange: #c43e14;
+  --yy-brand: #ef541f;
+  --yy-ink: #302c29;
+  --yy-muted: #756e67;
+  --yy-line: #eae5e0;
+  --yy-paper: #faf8f5;
+  --yy-tint: #fff0e8;
+  font-family: var(--yy-font);
+  color: var(--yy-ink);
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a,
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 2px solid var(--yy-orange);
+  outline-offset: 4px;
+}
+::selection {
+  background: #ffe0d0;
+  color: #9c300c;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  width: fit-content;
+}
+.site-brand-mark {
+  display: block;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.site-brand-mark img {
+  display: block;
+  width: 59px;
+  height: 42px;
+  max-width: none;
+  margin-left: -8px;
+  mix-blend-mode: multiply;
+}
+.site-brand-type strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+.site-brand-type small {
+  display: block;
+  margin-top: 6px;
+  color: var(--yy-orange);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+.site-brand-type .site-brand-caption {
+  color: var(--yy-muted);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 700px) {
+  .site-brand {
+    gap: 8px;
+  }
+  .site-brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+  .site-brand-mark img {
+    width: 47px;
+    height: 34px;
+    margin-left: -6px;
+  }
+  .site-brand-type strong {
+    font-size: 17px;
+  }
+  .site-brand-type small {
+    margin-top: 4px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+  .site-brand-type .site-brand-caption {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,231 @@
+.hero-resources {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  height: 390px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #f3e5da;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 50% 50%, #ffe7d4 0, #fff5ed 48%, #fffcf9 85%);
+}
+.resource-art-heading,
+.resource-art-caption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-inline: 22px;
+}
+.resource-art-heading {
+  height: 52px;
+}
+.resource-art-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #876550;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.resource-art-brand img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.resource-art-viewport {
+  height: calc(100% - 104px);
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 84%, transparent);
+}
+.resource-art-lanes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 124px));
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  margin-inline: 24px;
+  transform: rotate(-6deg);
+  transform-origin: center 140px;
+}
+.resource-art-track {
+  min-width: 0;
+  animation: resource-scroll-up 52s linear infinite;
+  animation-delay: -1s;
+  animation-play-state: paused;
+  will-change: transform;
+}
+.resource-art-track-reverse {
+  animation-name: resource-scroll-down;
+  animation-duration: 60s;
+  animation-delay: -49s;
+}
+.resource-art-track-third {
+  animation-duration: 56s;
+  animation-delay: -5s;
+}
+.hero-resources[data-running='true'] .resource-art-track {
+  animation-play-state: running;
+}
+@media (hover: hover) {
+  .hero-resources:hover .resource-art-track {
+    animation-play-state: paused;
+  }
+}
+.resource-art-set {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-bottom: 9px;
+}
+.hero-resource-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 66px;
+  min-width: 0;
+  padding: 10px 8px;
+  border: 1px solid #f0e5dd;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 6px 16px #86491c09;
+}
+.resource-photo-card {
+  display: block;
+  padding: 4px;
+}
+.resource-photo {
+  display: block;
+  width: 100%;
+  height: 86px;
+  border-radius: 7px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.resource-avatar {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.resource-platform {
+  display: grid;
+  flex: 0 0 28px;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+.resource-platform-facebook {
+  color: #1877f2;
+  background: #f0f6ff;
+}
+.resource-platform-instagram {
+  color: #c75474;
+  background: #fff0f4;
+}
+.resource-platform-dealseek {
+  color: #c14620;
+  background: #fff0e8;
+}
+.resource-platform-slickdeals {
+  color: #216c80;
+  background: #edf8fa;
+  font-size: 16px;
+}
+.resource-platform-telegram { color: #226f94; background: #edf7fc; font-size: 12px; }
+.resource-platform-youtube { color: #d54738; background: #fff2ef; }
+.resource-platform-cpdeals { color: #6b7064; background: #f2f5ee; font-size: 12px; }
+.resource-card-copy {
+  min-width: 0;
+}
+.resource-card-copy strong,
+.resource-card-copy > span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.resource-card-copy strong {
+  color: #4c443d;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.resource-card-copy > span {
+  margin-top: 3px;
+  color: #74665b;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.resource-photo-card .resource-card-copy {
+  padding: 6px 5px 5px;
+}
+.resource-art-caption {
+  height: 52px;
+  font-size: 10px;
+  color: #876550;
+}
+.resource-art-caption > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.resource-art-caption i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--home-brand);
+}
+@keyframes resource-scroll-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes resource-scroll-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+@media (max-width: 1100px) and (min-width: 601px) {
+  .hero-resources { height: 350px; }
+  .resource-art-lanes { gap: 8px; margin-inline: 14px; }
+  .resource-art-heading, .resource-art-caption { padding-inline: 15px; }
+  .resource-art-caption > span:last-child { display: none; }
+}
+@media (max-width: 850px) and (min-width: 601px) {
+  .hero-resources { height: 330px; }
+  .resource-art-brand { font-size: 10px; gap: 5px; }
+  .hero-resource-card { flex-direction: column; text-align: center; padding: 8px 5px; }
+  .resource-card-copy { width: 100%; }
+  .resource-photo-card { padding: 4px; text-align: left; }
+  .resource-photo { height: 70px; }
+}
+@media (max-width: 600px) {
+  .hero-resources { height: 272px; border-radius: 12px; }
+  .resource-art-heading { height: 44px; }
+  .resource-art-caption { height: 42px; font-size: 9px; }
+  .resource-art-heading, .resource-art-caption { padding-inline: 16px; }
+  .resource-art-viewport { height: calc(100% - 86px); }
+  .resource-art-lanes { grid-template-columns: repeat(3, minmax(0, 112px)); gap: 8px; margin-inline: 14px; }
+  .resource-photo { height: 68px; }
+  .hero-resource-card { flex-direction: column; min-height: 70px; padding: 7px 5px; text-align: center; }
+  .resource-card-copy { width: 100%; }
+  .resource-photo-card { padding: 4px; text-align: left; }
+  .resource-art-brand { font-size: 10px; }
+  .resource-avatar { width: 26px; height: 26px; flex-basis: 26px; }
+  .resource-platform { width: 26px; height: 26px; flex-basis: 26px; }
+}
+@media (max-width: 374px) {
+  .resource-art-caption > span:last-child { display: none; }
+  .resource-art-lanes { margin-inline: 10px; gap: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-resources .resource-art-track { animation: none; will-change: auto; }
+  .resource-art-track-reverse { transform: translateY(-52px); }
+}

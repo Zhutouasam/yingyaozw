@@ -67,13 +67,25 @@ The `src/` directory above is the legacy static website, retained for reference.
 - `nginx/`: current HTTPS and reverse proxy configuration
 - `compose.admin1101.yaml`: network override for the separate admin application
 
-This snapshot was synchronized from the running release on 2026-11-07.
-The release archive and server contain compiled frontend assets only: the
-original React/Vite frontend source, build scripts and lockfile are absent.
-Consequently this snapshot can run the deployed website, but `npm run build`,
-`npm run dev` and `npm run sync:pricing` require the original source project.
-The backend and compiled frontend are preserved without attempting to recreate
-that missing source.
+The deployed snapshot was synchronized on 2026-11-07. On 2026-11-11, the
+original React/Vite source, build scripts, lockfile, public assets and backend
+tests were imported into `offsite/` from the supplied source archive.
+The existing `offsite/dist/` remains the previously deployed snapshot; importing
+source does not deploy a new release or restart production services.
+
+Build and test the source with Node.js 24 or newer:
+
+```bash
+cd offsite
+npm ci
+npm run test:backend
+PUBLIC_ORIGIN=https://yingyaozw.com npm run build
+```
+
+The build regenerates `offsite/dist/`, including the prerendered homepage.
+Use `npm run dev` for frontend development and consult `offsite/BACKEND.md`
+for backend configuration. Runtime data and real `.env` files remain excluded
+from Git; `.env.example` contains configuration examples only.
 
 Run the preserved release with Node.js 24 or newer (no npm install required):
 
