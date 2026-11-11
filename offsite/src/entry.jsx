@@ -1,3 +1,4 @@
+import { homeTitle, homeDescription } from '../shared/public-content.mjs'
 import './theme.css'
 import './entry.css'
 
@@ -34,9 +35,9 @@ const status = (message, retry = false, notFound = false) => {
   }
   root.replaceChildren(section)
 }
-if (!root.querySelector('.home-shell') && !root[Symbol.for('yingyao.react-root')]) status('正在加载…')
+if (!root.querySelector('.home-shell, .public-page') && !root[Symbol.for('yingyao.react-root')]) status('正在加载…')
 const descriptions = {
-  home: '荧耀站外从产品品类出发，匹配优质群组与美国本土红人，定制站外推广。让小店铺积累成长的底气，让大品牌持续被看见。',
+  home: homeDescription,
   quote: '荧耀站外全球渠道报价中心，查询推广渠道、参考报价、合作要求与交付时效。',
   admin: '荧耀站外报价内容管理后台。'
 }
@@ -47,7 +48,7 @@ if (location.pathname === '/' && location.hash === '#catalog') {
   document.querySelector('meta[name="description"]').content = descriptions.admin
   import('./admin.jsx').catch(() => status('管理页面暂时无法加载，请重试。', true))
 } else if (location.pathname === '/quote' || location.pathname === '/quote/') {
-  document.title = '荧耀站外 · 全球渠道报价中心'
+  document.title = '荧耀站外｜跨境电商推广渠道与报价'
   document.querySelector('meta[name="description"]').content = descriptions.quote
   fetch('/api/catalog', { cache: 'no-store' })
     .then(async (response) => {
@@ -55,12 +56,19 @@ if (location.pathname === '/' && location.hash === '#catalog') {
       window.SNOW123_PRICING = await response.json()
       await import('./catalog.jsx')
     })
-    .catch(() => status('报价服务暂时无法连接，请稍后重试。', true))
+    .catch(() => {
+      if (root.querySelector('.public-page')) {
+        const notice = document.createElement('p')
+        notice.setAttribute('role', 'status')
+        notice.textContent = '实时报价暂时无法连接，请稍后刷新；下方服务说明仍可查看。'
+        root.prepend(notice)
+      } else status('报价服务暂时无法连接，请稍后重试。', true)
+    })
 } else if (location.pathname === '/') {
-  document.title = '荧耀站外 · 让好产品，被更多人看见'
+  document.title = homeTitle
   document.querySelector('meta[name="description"]').content = descriptions.home
   import('./home-entry.jsx').catch(() => {
-    if (!root.querySelector('.home-shell')) status('主页暂时无法加载，请重试。', true)
+    if (!root.querySelector('.home-shell, .public-page')) status('主页暂时无法加载，请重试。', true)
   })
 } else {
   document.title = '页面未找到 · 荧耀站外'

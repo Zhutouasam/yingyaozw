@@ -1,3 +1,4 @@
+import { servicePages, servicePath } from '../shared/public-content.mjs'
 import { createServer } from 'node:http'
 import { createReadStream, existsSync, statSync } from 'node:fs'
 import { resolve, extname, sep } from 'node:path'
@@ -44,7 +45,18 @@ export function createWebsiteServer(options = {}) {
       res.end('Not found')
       return
     }
-    let file =
+    const service = servicePages.find(page => [servicePath(page), servicePath(page).slice(0, -1)].includes(pathname))
+    const canonicalPath = pathname === '/quote/' ? '/quote' : service ? servicePath(service) : pathname
+    if (canonicalPath !== pathname) {
+      res.writeHead(308, { Location: canonicalPath + new URL(req.url, 'http://localhost').search })
+      res.end()
+      return
+    }
+    let file = service
+      ? resolve(assets, `services/${service.slug}/index.html`)
+      : pathname === '/quote' && existsSync(resolve(assets, 'quote.html'))
+        ? resolve(assets, 'quote.html')
+        :
       pathname === '/' && existsSync(resolve(assets, 'home.html'))
         ? resolve(assets, 'home.html')
         : ['/', '/quote', '/quote/', '/admin', '/admin/'].includes(pathname)

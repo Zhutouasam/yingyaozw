@@ -3,3 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/admin/
 Disallow: /api/auth/
+Sitemap: https://yingyaozw.com/sitemap.xml

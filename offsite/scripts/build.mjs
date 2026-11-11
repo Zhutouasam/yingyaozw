@@ -1,3 +1,4 @@
+import { buildPublicPages } from './build-public-pages.mjs'
 import { build } from 'vite'
 import react from '@vitejs/plugin-react'
 import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises'
@@ -25,13 +26,8 @@ try {
   const critical = [...styles].map(file => `<link rel="stylesheet" href="/${file}">`).join('\n') + '\n' + [...files].map(file => `<link rel="modulepreload" href="/${file}">`).join('\n')
   let html = await readFile(resolve(root, 'dist/index.html'), 'utf8')
   html = html.replace('<div id="root"></div>', `<div id="root">${renderHome()}</div>`).replace('</head>', `${critical}\n</head>`)
-  const origin = process.env.PUBLIC_ORIGIN
-  if (origin) {
-    const url = new URL(origin)
-    if (!['http:', 'https:'].includes(url.protocol) || url.pathname !== '/' || url.search || url.hash || url.username || url.password) throw new Error('PUBLIC_ORIGIN 须为有效的站点根域名')
-    const safeOrigin = url.origin.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
-    html = html.replace('</head>', `<link rel="canonical" href="${safeOrigin}/"><meta property="og:url" content="${safeOrigin}/">\n</head>`).replace('content="/assets/yingyao-logo.jpg"', `content="${safeOrigin}/assets/yingyao-logo.jpg"`)
-  }
   await writeFile(resolve(root, 'dist/home.html'), html)
   console.log('Homepage prerendered: dist/home.html')
 } finally { await rm(temporary, { recursive: true, force: true }) }
+
+await buildPublicPages(root)

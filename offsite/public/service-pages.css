@@ -1,0 +1,16 @@
+.public-page { max-width: 1040px; margin: auto; padding: 24px; color: #24201d; font: 16px/1.85 -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; overflow-wrap: anywhere; }
+.public-page header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #e9e4df; padding-bottom: 20px; }
+.public-page a { color: #a63817; text-decoration: underline; text-underline-offset: 4px; }
+.public-page a:focus-visible { outline: 3px solid #a63817; outline-offset: 5px; }
+.public-page .public-brand { font-size: 24px; font-weight: 700; color: #24201d; text-decoration: none; }
+.public-page header nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.public-page main { max-width: 800px; margin: 36px auto 56px; }
+.public-page h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.35; margin: 24px 0; }
+.public-page .public-intro { font-size: 19px; color: #65574d; }
+.public-page section { margin: 32px 0; }
+.public-page h2 { font-size: 23px; margin-bottom: 10px; }
+.public-page p { margin: 12px 0; }
+.public-page ul { padding-left: 24px; }
+.public-page .public-action { display: inline-block; padding: 10px 20px; border: 1px solid #a63817; border-radius: 6px; }
+.public-page footer { border-top: 1px solid #e9e4df; padding-top: 20px; font-size: 14px; }
+@media (max-width: 480px) { .public-page { padding: 20px 16px; } .public-page header nav { gap: 14px; } }

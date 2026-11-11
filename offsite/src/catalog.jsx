@@ -1,3 +1,5 @@
+import CatalogServiceInfo from './catalog-service-info.jsx'
+import { company } from '../shared/public-content.mjs'
 import React, {
   createContext,
   useContext,
@@ -1012,6 +1014,7 @@ function App() {
             </p>
           </div>
         </section>
+        <CatalogServiceInfo />
         <section className="closing-note container">
           <div>
             <span className="eyebrow">已找到合适的渠道？</span>
@@ -1027,7 +1030,7 @@ function App() {
       </main>
       <footer className="page-footer container">
         <SiteBrand />
-        <span>© {new Date().getFullYear()} 荧耀站外</span>
+        <span>© {new Date().getFullYear()} {company} · 荧耀站外</span>
         <a href="#" className="back-to-top">
           回到顶部
           <ArrowUpRight size={14} />

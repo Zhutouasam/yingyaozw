@@ -1,3 +1,4 @@
+import { homeDescription, procurementFaqs, servicePages, servicePath } from '../shared/public-content.mjs'
 import React, { useEffect, useState } from 'react'
 import { ArrowUpRight, Plus, Megaphone, Video, Newspaper, Store } from 'lucide-react'
 import CaseWall from './case-wall.jsx'
@@ -57,7 +58,7 @@ const steps = [
   ['匹配渠道与方案', '筛选群组受众与发布门槛，结合红人、折扣和上线时间整理方案。'],
   ['确认费用与排期', '逐项确认最终费用、发布时间和交付内容，再安排执行。']
 ]
-const faqs = [
+const faqs = [...procurementFaqs,
   [
     '第一次做站外推广，应该怎么选？',
     '先明确产品品类、目标市场和预算，再进入报价中心，按分类比较价格、发布要求与排期。点击渠道名称可查看完整合作要求。'
@@ -203,6 +204,9 @@ export default function Home() {
               <ArrowUpRight size={16} />
             </a>
           </header>
+          <nav className="hero-footnote" aria-label="服务详细介绍">
+            {servicePages.map(page => <a key={page.slug} href={servicePath(page)}>{page.title}</a>)}
+          </nav>
           <div className="home-service-list">
             {services.map((service) => (
               <article className="home-service-row" id={`service-${service.id}`} key={service.id}>
@@ -249,6 +253,7 @@ export default function Home() {
               </div>
             </div>
             <div className="about-copy">
+              <p>{homeDescription}</p>
               <p className="about-introduction">
                 从销售与运营一线，
                 <br />
@@ -400,7 +405,7 @@ export default function Home() {
           </nav>
         </div>
         <div className="home-footer-bottom">
-          <span>© {new Date().getFullYear()} 荧耀站外 · YINGYAO OFFSITE</span>
+          <span>© {new Date().getFullYear()} 深圳市荧耀科技有限公司 · 荧耀站外</span>
           <span>参考报价与合作条件，以执行前确认为准。</span>
         </div>
       </footer>

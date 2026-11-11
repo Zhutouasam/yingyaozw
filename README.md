@@ -61,7 +61,8 @@ The `src/` directory above is the legacy static website, retained for reference.
 - Current release: `/opt/yingyao-offsite/releases/20261015-first`
 - `offsite/dist/`: deployed frontend HTML, compiled JavaScript, CSS and assets
 - `offsite/server/`: deployed Node backend source
-- `offsite/public/`: pricing seed assets
+- `offsite/public/`: public assets and pricing seeds
+- `offsite/shared/`: shared public content and structured-data helpers (required at runtime)
 - `offsite/package.json`: original release manifest
 - `deploy/yingyao-offsite.service`: production systemd service configuration
 - `nginx/`: current HTTPS and reverse proxy configuration
@@ -70,16 +71,17 @@ The `src/` directory above is the legacy static website, retained for reference.
 The deployed snapshot was synchronized on 2026-11-07. On 2026-11-11, the
 original React/Vite source, build scripts, lockfile, public assets and backend
 tests were imported into `offsite/` from the supplied source archive.
-The existing `offsite/dist/` remains the previously deployed snapshot; importing
-source does not deploy a new release or restart production services.
+The GEO update regenerates `offsite/dist/` from source for server deployment.
+Updating Git does not switch the live release or restart production services.
+See `offsite/docs/GEO-DEPLOYMENT.md` for staging, verification and rollback.
 
 Build and test the source with Node.js 24 or newer:
 
 ```bash
 cd offsite
 npm ci
-npm run test:backend
 PUBLIC_ORIGIN=https://yingyaozw.com npm run build
+npm run test:backend
 ```
 
 The build regenerates `offsite/dist/`, including the prerendered homepage.
