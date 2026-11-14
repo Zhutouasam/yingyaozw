@@ -50,3 +50,9 @@ curl -fsS https://yingyaozw.com/robots.txt
 站长平台验证和 sitemap 提交需使用真实百度/Bing/Google账号；本次未代办。新增页面不代表已被索引或推荐。使用新会话、固定联网模式，在 DeepSeek、豆包及实际使用的 Codex 搜索工具中测试相同非品牌问题，并保存真实引用链接。
 
 企业与服务事实采用负责人提供的公司名称及既有官网业务。没有虚构案例、评价、获奖、地址、电话或平台认证。实际联系方式和案例仍由原后台维护，本次没有凭空填充。后续经授权补充可核验案例及一致的行业资料，是内容与外部信誉工作，无法仅由一次代码更新完成。
+
+## 2026-11-14 抓取增强
+
+构建额外生成 `llms.txt`、`index.md`、`quote.md` 和四份 `services/*/index.md`，服务端为 Markdown 返回 `text/markdown`。这些是辅助阅读入口，HTML 正文仍是主要公开内容。源码及产物需一起部署；没有数据库迁移或依赖变化。
+
+上线后在仓库根目录运行 `node offsite/scripts/audit-crawl.mjs https://yingyaozw.com`，并按 [参考资料与验证记录](GEO-REFERENCE-20261114.md) 完成真实抓取、索引与引用检查。

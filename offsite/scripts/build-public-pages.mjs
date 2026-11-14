@@ -1,3 +1,4 @@
+import { buildMachineContent } from './build-machine-content.mjs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { homeTitle, homeDescription, servicePages, servicePath } from '../shared/public-content.mjs'
@@ -27,6 +28,7 @@ export async function buildPublicPages(root) {
       origin, path: servicePath(page), title: `${page.title}｜荧耀站外`, description: page.description, page
     }))
   }
+  await buildMachineContent(dist, origin)
   const paths = ['/', '/quote', ...servicePages.map(servicePath)]
   const urls = paths.map(path => `  <url><loc>${escapeHtml(origin + path)}</loc></url>`).join('\n')
   await writeFile(resolve(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`)

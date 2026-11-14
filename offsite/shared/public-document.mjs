@@ -1,4 +1,4 @@
-import { brand, company, servicePages, servicePath } from './public-content.mjs'
+import { brand, company, servicePages, servicePath, procurementFaqs } from './public-content.mjs'
 
 export function resolveOrigin(value = 'https://yingyaozw.com') {
   const url = new URL(value)
@@ -11,7 +11,7 @@ export const escapeHtml = value => String(value).replace(/[&<>"']/g, character =
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 })[character])
 
-export function structuredData(origin, page) {
+export function structuredData(origin, page, { path = '/', title = brand } = {}) {
   const graph = [
     { '@type': 'Organization', '@id': `${origin}/#organization`, name: company, url: `${origin}/`,
       brand: { '@type': 'Brand', name: brand, alternateName: 'YINGYAO OFFSITE' } },
@@ -21,6 +21,18 @@ export function structuredData(origin, page) {
   if (page) graph.push({ '@type': 'Service', '@id': `${origin}${servicePath(page)}#service`,
     name: page.title, description: page.description, url: `${origin}${servicePath(page)}`,
     provider: { '@id': `${origin}/#organization` } })
+  const url = origin + path
+  graph.push({ '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title,
+    inLanguage: 'zh-CN', isPartOf: { '@id': `${origin}/#website` },
+    about: { '@id': page ? `${url}#service` : `${origin}/#organization` } })
+  if (page) graph.push({ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: `${origin}/` },
+    { '@type': 'ListItem', position: 2, name: page.title, item: url }
+  ] })
+  const faqs = page ? [[page.question, page.answer]] : path === '/' ? procurementFaqs : []
+  if (faqs.length) graph.push({ '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faqs.map(([question, answer]) => ({
+    '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer }
+  })) })
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replaceAll('<', '\\u003c')
 }
 export function decorateDocument(html, { origin, path, title, description, page }) {
@@ -33,12 +45,23 @@ export function decorateDocument(html, { origin, path, title, description, page 
     const pattern = new RegExp(`<meta ${attribute}="${key}" content="[^"]*"\\s*\\/?>`)
     output = output.replace(pattern, `<meta ${attribute}="${key}" content="${escapeHtml(value)}">`)
   }
-  return output.replace('</head>', `<link rel="canonical" href="${canonical}">\n<meta property="og:url" content="${canonical}">\n<script type="application/ld+json">${structuredData(origin, page)}</script>\n</head>`)
+  const markdown = path === '/' ? '/index.md' : path === '/quote' ? '/quote.md' : `${path}index.md`
+  output = output.replace('</head>', `<link rel="alternate" type="text/markdown" href="${escapeHtml(origin + markdown)}" title="Markdown">\n<link rel="help" href="${origin}/llms.txt" title="站点阅读目录">\n</head>`)
+  return output.replace('</head>', `<link rel="canonical" href="${canonical}">\n<meta property="og:url" content="${canonical}">\n<script type="application/ld+json">${structuredData(origin, page, { path, title })}</script>\n</head>`)
 }
 export function publicPageBody(page) {
   const title = page?.title || '跨境电商推广渠道与报价说明'
   const intro = page?.description || '按目标市场和产品品类比较推广渠道、合作条件与参考报价。最终费用及排期以执行前确认为准。'
-  const sections = page ? [
+  const sections = publicSections(page)
+  return `<div class="public-page"><header><a class="public-brand" href="/">${brand}</a><nav aria-label="网站导航"><a href="/#services">服务</a><a href="/quote">渠道报价</a><a href="/#cooperation">合作咨询</a></nav></header>
+<main><nav aria-label="当前位置"><a href="/">首页</a> / ${escapeHtml(title)}</nav><h1>${escapeHtml(title)}</h1><p class="public-intro">${escapeHtml(intro)}</p><p>${brand}由${company}运营。</p>
+${sections.map(([heading, text]) => `<section><h2>${escapeHtml(heading)}</h2><p>${escapeHtml(text)}</p></section>`).join('\n')}
+<section><h2>了解相关服务</h2><ul>${servicePages.map(item => `<li><a href="${servicePath(item)}">${escapeHtml(item.title)}</a></li>`).join('')}</ul></section>
+<section><h2>沟通产品需求</h2><p>提供产品链接、目标市场、预算与时间，通过首页合作咨询入口沟通具体方案。</p><a class="public-action" href="${page ? `/quote?category=${page.category}` : '/#cooperation'}">${page ? '查看渠道与参考报价' : '前往合作咨询'}</a></section>
+</main><footer>${company} · ${brand}<p>参考报价、渠道可用性与合作条件，以执行前确认为准。</p></footer></div>`
+}
+export function publicSections(page) {
+  return page ? [
     ['适合谁', page.audience], ['服务内容与交付', page.delivery],
     ['询价前需要准备什么', page.preparation], ['合作前确认费用与排期', '费用受渠道、市场、内容形式、排期及合作条件影响。确认产品与受众匹配后，再逐项确认费用、交付范围和排期。'],
     [page.question, page.answer], ['服务边界', page.limitation]
@@ -47,10 +70,4 @@ export function publicPageBody(page) {
     ['红人视频、PR媒体与亚马逊周边', '查看影响者视频、新闻稿、周边服务与运营工具的适用条件及交付说明。'],
     ['费用如何确认', '询价时提供产品链接、品类、市场、预算和上线时间。寄样、产品折扣及素材使用等费用须逐项确认，不能默认包含。']
   ]
-  return `<div class="public-page"><header><a class="public-brand" href="/">${brand}</a><nav aria-label="网站导航"><a href="/#services">服务</a><a href="/quote">渠道报价</a><a href="/#cooperation">合作咨询</a></nav></header>
-<main><nav aria-label="当前位置"><a href="/">首页</a> / ${escapeHtml(title)}</nav><h1>${escapeHtml(title)}</h1><p class="public-intro">${escapeHtml(intro)}</p><p>${brand}由${company}运营。</p>
-${sections.map(([heading, text]) => `<section><h2>${escapeHtml(heading)}</h2><p>${escapeHtml(text)}</p></section>`).join('\n')}
-<section><h2>了解相关服务</h2><ul>${servicePages.map(item => `<li><a href="${servicePath(item)}">${escapeHtml(item.title)}</a></li>`).join('')}</ul></section>
-<section><h2>沟通产品需求</h2><p>提供产品链接、目标市场、预算与时间，通过首页合作咨询入口沟通具体方案。</p><a class="public-action" href="${page ? `/quote?category=${page.category}` : '/#cooperation'}">${page ? '查看渠道与参考报价' : '前往合作咨询'}</a></section>
-</main><footer>${company} · ${brand}<p>参考报价、渠道可用性与合作条件，以执行前确认为准。</p></footer></div>`
 }

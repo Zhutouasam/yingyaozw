@@ -21,7 +21,18 @@ async function checkPublicPages(base) {
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
       assert.equal(schemas.length, 1, path)
       assert.ok(JSON.parse(schemas[0][1])['@graph'].some(item => item['@type'] === 'Organization'))
+      const graph = JSON.parse(schemas[0][1])['@graph']
+      assert.ok(graph.some(item => item['@type'] === 'WebPage' && item.url === `https://yingyaozw.com${path}`))
+      assert.match(html, /rel="alternate" type="text\/markdown"/)
       if (path.startsWith('/services/')) {
+        assert.ok(graph.some(item => item['@type'] === 'BreadcrumbList'))
+        const faq = graph.find(item => item['@type'] === 'FAQPage')
+        assert.ok(faq && html.includes(faq.mainEntity[0].acceptedAnswer.text))
+        const markdown = await fetch(base + path + 'index.md')
+        assert.equal(markdown.status, 200)
+        assert.match(markdown.headers.get('content-type'), /text\/markdown/)
+        assert.match(await markdown.text(), /深圳市荧耀科技有限公司/)
+
         assert.match(html, /询价|合作前/)
         const head = await fetch(base + path, { method: 'HEAD' })
         assert.equal(head.status, 200)
@@ -38,6 +49,14 @@ test('GEO 生产路由：原始正文、规范网址、引用数据和私有页�
   const base = `http://127.0.0.1:${website.server.address().port}`
   try {
     await checkPublicPages(base)
+    const llms = await (await fetch(base + '/llms.txt')).text()
+    assert.match(llms, /深圳市荧耀科技有限公司/)
+    for (const path of paths) assert.ok(llms.includes(`https://yingyaozw.com${path}index.md`))
+    for (const path of ['/index.md', '/quote.md']) {
+      const markdown = await fetch(base + path)
+      assert.equal(markdown.status, 200)
+      assert.match(await markdown.text(), /深圳市荧耀科技有限公司/)
+    }
     const quote = await (await fetch(base + '/quote')).text()
     assert.match(quote, /费用|报价/)
     assert.match(quote, /src="\/assets\/index-/)
