@@ -56,3 +56,9 @@ curl -fsS https://yingyaozw.com/robots.txt
 构建额外生成 `llms.txt`、`index.md`、`quote.md` 和四份 `services/*/index.md`，服务端为 Markdown 返回 `text/markdown`。这些是辅助阅读入口，HTML 正文仍是主要公开内容。源码及产物需一起部署；没有数据库迁移或依赖变化。
 
 上线后在仓库根目录运行 `node offsite/scripts/audit-crawl.mjs https://yingyaozw.com`，并按 [参考资料与验证记录](GEO-REFERENCE-20261114.md) 完成真实抓取、索引与引用检查。
+
+## 2026-11-14 买家问答表交接
+
+24条买家问题已填入用户确认的大白话回答，见[问答阅读表](GEO-BUYER-QA.md)与[CSV表格](GEO-BUYER-QA.csv)。CSV包含问题编号、问题、参考回答、来源和状态，后续Agent可据此维护FAQ内容。
+
+这两个文件属于仓库文档，当前构建不会自动将其展示成官网页面。本次表格提交不新增页面或改变运行逻辑；前面的官网GEO代码仍按本文的构建、发布和验收步骤部署。表中参考回答不能填入AI实测结果，也不能视为平台已推荐荧耀。
