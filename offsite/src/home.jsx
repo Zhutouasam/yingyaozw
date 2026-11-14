@@ -402,6 +402,7 @@ export default function Home() {
             <a href="#about">品牌故事</a>
             <a href="#services">服务介绍</a>
             <a href="/quote">渠道报价</a>
+            <a href="/buyer-qa/">买家问答</a>
           </nav>
         </div>
         <div className="home-footer-bottom">

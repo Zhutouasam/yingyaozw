@@ -14,3 +14,7 @@
 .public-page .public-action { display: inline-block; padding: 10px 20px; border: 1px solid #a63817; border-radius: 6px; }
 .public-page footer { border-top: 1px solid #e9e4df; padding-top: 20px; font-size: 14px; }
 @media (max-width: 480px) { .public-page { padding: 20px 16px; } .public-page header nav { gap: 14px; } }
+
+.public-page article { padding: 20px 0; border-bottom: 1px solid #e9e4df; scroll-margin-top: 24px; }
+.public-page h3 { font-size: 19px; line-height: 1.5; margin: 8px 0; }
+.public-page section[id] { scroll-margin-top: 24px; }

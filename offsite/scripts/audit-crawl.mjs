@@ -1,5 +1,6 @@
 import { servicePages, servicePath, company } from '../shared/public-content.mjs'
-import { resolveOrigin } from '../shared/public-document.mjs'
+import { readBuyerQa } from './read-buyer-qa.mjs'
+import { escapeHtml, resolveOrigin } from '../shared/public-document.mjs'
 
 const origin = resolveOrigin(process.argv[2])
 const canonicalOrigin = resolveOrigin(process.argv[3] || origin)
@@ -28,17 +29,26 @@ async function auditPage(path) {
       const schemas = [...body.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
       check({ path, agent }, '有效公司结构化数据', schemas.some(match => JSON.parse(match[1])['@graph']?.some(item => item['@type'] === 'Organization')))
     } catch { check({ path, agent }, '有效公司结构化数据', false) }
+    if (path === '/buyer-qa/') {
+      const entries = readBuyerQa()
+      const visible = body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
+      check({ path, agent }, '24 条已确认问答无需 JS 可读', entries.every(entry => visible.includes(`<h3>${escapeHtml(entry.question)}</h3>`) && visible.includes(`<p>${escapeHtml(entry.answer)}</p>`)))
+      const graph = JSON.parse(body.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph']
+      const questions = graph.find(item => item['@type'] === 'FAQPage')?.mainEntity
+      check({ path, agent }, 'FAQ 结构化数据与确认文案一致', questions?.length === 24 && entries.every((entry, i) => questions[i].name === entry.question && questions[i].acceptedAnswer.text === entry.answer))
+    }
     if (baseline === undefined) baseline = body
     else check({ path, agent }, '不同请求标识返回一致正文', body === baseline)
   }
 }
 try {
-  for (const path of ['/', '/quote', ...servicePages.map(servicePath)]) await auditPage(path)
-  for (const path of ['/robots.txt', '/sitemap.xml', '/llms.txt', '/index.md', '/quote.md',
+  for (const path of ['/', '/quote', '/buyer-qa/', ...servicePages.map(servicePath)]) await auditPage(path)
+  for (const path of ['/robots.txt', '/sitemap.xml', '/llms.txt', '/index.md', '/quote.md', '/buyer-qa/index.md',
     ...servicePages.map(page => `${servicePath(page)}index.md`)]) {
     const { response, body } = await get(path, agents[0])
     if (path.endsWith('.md')) check({ path, agent: agents[0] }, 'Markdown 正文与类型', body.includes(company) && /text\/markdown/.test(response.headers.get('content-type') || ''))
     if (path === '/robots.txt') check({ path, agent: agents[0] }, '声明站点地图', body.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`))
+    if (path === '/sitemap.xml') check({ path, agent: agents[0] }, '涵盖问答网址', body.includes(canonicalOrigin + '/buyer-qa/'))
     if (path === '/sitemap.xml') check({ path, agent: agents[0] }, '涵盖服务网址', servicePages.every(page => body.includes(canonicalOrigin + servicePath(page))))
   }
 } catch (error) {

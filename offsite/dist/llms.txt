@@ -7,6 +7,7 @@
 ## 官网入口
 
 - [首页](https://yingyaozw.com/)
+- [买家问答](https://yingyaozw.com/buyer-qa/)
 - [渠道与参考报价](https://yingyaozw.com/quote)
 - [亚马逊站外推广服务](https://yingyaozw.com/services/amazon-offsite/): 根据产品品类、目标市场和预算，匹配海外社群、Deal网站及博主推广渠道，合作前确认发布要求、费用及排期。
 - [Facebook群组与Deal网站推广](https://yingyaozw.com/services/facebook-groups/): 面向跨境电商卖家，结合国家、产品品类和优惠条件沟通Facebook群组与Deal网站推广。
@@ -15,6 +16,7 @@
 
 ## Markdown 阅读版本
 
+- [/buyer-qa/](https://yingyaozw.com/buyer-qa/index.md)
 - [/](https://yingyaozw.com/index.md)
 - [/quote](https://yingyaozw.com/quote.md)
 - [/services/amazon-offsite/](https://yingyaozw.com/services/amazon-offsite/index.md)

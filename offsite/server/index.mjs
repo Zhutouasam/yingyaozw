@@ -47,13 +47,13 @@ export function createWebsiteServer(options = {}) {
       return
     }
     const service = servicePages.find(page => [servicePath(page), servicePath(page).slice(0, -1)].includes(pathname))
-    const canonicalPath = pathname === '/quote/' ? '/quote' : service ? servicePath(service) : pathname
+    const canonicalPath = pathname === '/buyer-qa' ? '/buyer-qa/' : pathname === '/quote/' ? '/quote' : service ? servicePath(service) : pathname
     if (canonicalPath !== pathname) {
       res.writeHead(308, { Location: canonicalPath + new URL(req.url, 'http://localhost').search })
       res.end()
       return
     }
-    let file = service
+    let file = pathname === '/buyer-qa/' ? resolve(assets, 'buyer-qa/index.html') : service
       ? resolve(assets, `services/${service.slug}/index.html`)
       : pathname === '/quote' && existsSync(resolve(assets, 'quote.html'))
         ? resolve(assets, 'quote.html')

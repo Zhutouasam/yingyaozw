@@ -1,30 +1,30 @@
 {
-  "_images-yQFZgFqF.js": {
-    "file": "assets/images-yQFZgFqF.js",
+  "_images-BX8cagfZ.js": {
+    "file": "assets/images-BX8cagfZ.js",
     "name": "images",
     "imports": [
-      "_site-brand-BA3lbybo.js"
+      "_site-brand-DvKv2G7D.js"
     ]
   },
-  "_search-DwgkNoo1.js": {
-    "file": "assets/search-DwgkNoo1.js",
+  "_search-Dt7rBJB9.js": {
+    "file": "assets/search-Dt7rBJB9.js",
     "name": "search",
     "imports": [
-      "_site-brand-BA3lbybo.js"
+      "_site-brand-DvKv2G7D.js"
     ]
   },
-  "_site-brand-BA3lbybo.js": {
-    "file": "assets/site-brand-BA3lbybo.js",
+  "_site-brand-DvKv2G7D.js": {
+    "file": "assets/site-brand-DvKv2G7D.js",
     "name": "site-brand",
     "imports": [
       "index.html"
     ]
   },
-  "_wechat-dialog-C83t1PME.js": {
-    "file": "assets/wechat-dialog-C83t1PME.js",
+  "_wechat-dialog-DrASeEpG.js": {
+    "file": "assets/wechat-dialog-DrASeEpG.js",
     "name": "wechat-dialog",
     "imports": [
-      "_site-brand-BA3lbybo.js"
+      "_site-brand-DvKv2G7D.js"
     ],
     "css": [
       "assets/wechat-dialog-Dz435_SN.css"
@@ -35,7 +35,7 @@
     "src": "_wechat-dialog-Dz435_SN.css"
   },
   "index.html": {
-    "file": "assets/index-BLnLwne3.js",
+    "file": "assets/index-BI6rEGJS.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -49,44 +49,44 @@
     ]
   },
   "src/admin.jsx": {
-    "file": "assets/admin-CE6GjHne.js",
+    "file": "assets/admin-BBZTyDIQ.js",
     "name": "admin",
     "src": "src/admin.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_site-brand-BA3lbybo.js",
-      "_search-DwgkNoo1.js",
-      "_images-yQFZgFqF.js"
+      "_site-brand-DvKv2G7D.js",
+      "_search-Dt7rBJB9.js",
+      "_images-BX8cagfZ.js"
     ],
     "css": [
       "assets/admin-CVJ9E4a7.css"
     ]
   },
   "src/catalog.jsx": {
-    "file": "assets/catalog-CHI3dqju.js",
+    "file": "assets/catalog-Q4B3AzMW.js",
     "name": "catalog",
     "src": "src/catalog.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_site-brand-BA3lbybo.js",
+      "_site-brand-DvKv2G7D.js",
       "index.html",
-      "_wechat-dialog-C83t1PME.js",
-      "_search-DwgkNoo1.js"
+      "_wechat-dialog-DrASeEpG.js",
+      "_search-Dt7rBJB9.js"
     ],
     "css": [
       "assets/catalog-0qMUEuS4.css"
     ]
   },
   "src/home-entry.jsx": {
-    "file": "assets/home-entry-pmZzIbmv.js",
+    "file": "assets/home-entry-eBEetw7P.js",
     "name": "home-entry",
     "src": "src/home-entry.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_site-brand-BA3lbybo.js",
+      "_site-brand-DvKv2G7D.js",
       "index.html",
-      "_wechat-dialog-C83t1PME.js",
-      "_images-yQFZgFqF.js"
+      "_wechat-dialog-DrASeEpG.js",
+      "_images-BX8cagfZ.js"
     ],
     "css": [
       "assets/home-entry-QsdctyWH.css"

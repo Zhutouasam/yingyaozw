@@ -94,3 +94,50 @@ test('GEO 元信息：拒绝非根域名，并安全转义结构化数据', asyn
   assert.equal(JSON.parse(data)['@graph'][2].name, page.title)
   assert.ok(!data.includes('<'))
 })
+
+test('买家问答：24 条确认文案在 HTML、结构化数据与 Markdown 中一致且服务入口可达', async () => {
+  const { readBuyerQa } = await import('../scripts/read-buyer-qa.mjs')
+  const { escapeHtml } = await import('../shared/public-document.mjs')
+  const entries = readBuyerQa()
+  const directory = mkdtempSync(join(tmpdir(), 'yingyao-buyer-qa-'))
+  const website = createWebsiteServer({ dbPath: join(directory, 'pricing.sqlite') })
+  website.server.listen(0, '127.0.0.1'); await once(website.server, 'listening')
+  const base = `http://127.0.0.1:${website.server.address().port}`
+  try {
+    const response = await fetch(base + '/buyer-qa/')
+    assert.equal(response.status, 200)
+    const html = await response.text()
+    assert.ok(html.includes('rel="canonical" href="https://yingyaozw.com/buyer-qa/"'))
+    assert.doesNotMatch(html, /<script[^>]+type="module"/)
+    const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph']
+    const faq = graph.find(item => item['@type'] === 'FAQPage')
+    assert.equal(entries.length, 24)
+    assert.equal(faq.mainEntity.length, 24)
+    const markdownResponse = await fetch(base + '/buyer-qa/index.md')
+    assert.equal(markdownResponse.status, 200)
+    assert.match(markdownResponse.headers.get('content-type'), /text\/markdown/)
+    const markdown = await markdownResponse.text()
+    for (const [index, entry] of entries.entries()) {
+      assert.ok(visible.includes(`<h3>${escapeHtml(entry.question)}</h3>`), entry.id)
+      assert.ok(visible.includes(`<p>${escapeHtml(entry.answer)}</p>`), entry.id)
+      assert.equal(faq.mainEntity[index].name, entry.question)
+      assert.equal(faq.mainEntity[index].acceptedAnswer.text, entry.answer)
+      assert.ok(markdown.includes(entry.question) && markdown.includes(entry.answer), entry.id)
+      assert.ok(visible.includes(`href="/services/${entry.slug}/"`))
+    }
+    for (const path of paths) {
+      const service = await (await fetch(base + path)).text()
+      assert.ok(service.includes(`href="/buyer-qa/#${path.split('/')[2]}"`), path)
+    }
+    assert.ok((await (await fetch(base + '/')).text()).includes('href="/buyer-qa/"'))
+    for (const path of ['/sitemap.xml', '/llms.txt']) assert.ok((await (await fetch(base + path)).text()).includes('https://yingyaozw.com/buyer-qa/'))
+    const redirect = await fetch(base + '/buyer-qa?from=test', { redirect: 'manual' })
+    assert.equal(redirect.status, 308)
+    assert.equal(redirect.headers.get('location'), '/buyer-qa/?from=test')
+    assert.equal((await fetch(base + '/buyer-qa/', { method: 'HEAD' })).status, 200)
+  } finally {
+    const closed = once(website.server, 'close'); website.server.close(); await closed
+    rmSync(directory, { recursive: true, force: true })
+  }
+})

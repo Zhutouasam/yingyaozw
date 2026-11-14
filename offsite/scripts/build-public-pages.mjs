@@ -1,8 +1,9 @@
+import { readBuyerQa } from './read-buyer-qa.mjs'
 import { buildMachineContent } from './build-machine-content.mjs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { homeTitle, homeDescription, servicePages, servicePath } from '../shared/public-content.mjs'
-import { decorateDocument, publicPageBody, resolveOrigin, escapeHtml } from '../shared/public-document.mjs'
+import { decorateDocument, publicPageBody, resolveOrigin, escapeHtml, buyerQaBody } from '../shared/public-document.mjs'
 
 export async function buildPublicPages(root) {
   const origin = resolveOrigin(process.env.PUBLIC_ORIGIN)
@@ -28,8 +29,18 @@ export async function buildPublicPages(root) {
       origin, path: servicePath(page), title: `${page.title}｜荧耀站外`, description: page.description, page
     }))
   }
-  await buildMachineContent(dist, origin)
-  const paths = ['/', '/quote', ...servicePages.map(servicePath)]
+  const buyerQa = readBuyerQa()
+  await mkdir(resolve(dist, 'buyer-qa'), { recursive: true })
+  const faqHtml = base.replace(/^[ \t]*<script type="module"[^>]*><\/script>[ \t]*\r?\n/gm, '')
+    .replace('<div id="root"></div>', `<div id="root">${buyerQaBody(buyerQa)}</div>`)
+    .replace('</head>', '<link rel="stylesheet" href="/service-pages.css">\n</head>')
+  await writeFile(resolve(dist, 'buyer-qa/index.html'), decorateDocument(faqHtml, {
+    origin, path: '/buyer-qa/', title: '站外推广买家问答｜荧耀站外',
+    description: '24 个买家常见问题，涵盖亚马逊站外推广、Facebook群组与Deal网站、红人视频及PR媒体的选型、费用、准备资料和交付验收。',
+    faqs: buyerQa.map(entry => [entry.question, entry.answer])
+  }))
+  await buildMachineContent(dist, origin, buyerQa)
+  const paths = ['/', '/quote', '/buyer-qa/', ...servicePages.map(servicePath)]
   const urls = paths.map(path => `  <url><loc>${escapeHtml(origin + path)}</loc></url>`).join('\n')
   await writeFile(resolve(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`)
   const robots = (await readFile(resolve(dist, 'robots.txt'), 'utf8')).replace(/^Sitemap:.*\n?/gmi, '')
