@@ -101,3 +101,26 @@ Production pricing, inquiries, accounts and sessions live in
 The database, credentials, certificates and environment files are excluded
 from Git. Restoring the full live content requires that private database.
 This Git synchronization does not change the running release or restart services.
+
+## Website entrypoint recovery (2026-11-14)
+
+The public Nginx container `yingyao-static` was stopped while the Offsite
+application and databases remained available. Both public ports refused
+connections. Starting the existing container restored the website. The exact
+reason the container originally stopped was not established from the logs.
+
+The Nginx restart policy is now `always`, including in the live container, so
+Docker starts the website entrypoint after daemon or host restarts even if it
+was previously stopped. An explicit container stop still keeps it stopped
+until it is started manually or Docker restarts.
+
+Preserve the admin network override when recreating the entrypoint:
+
+```bash
+cd /opt/yingyao-static
+docker compose -f docker-compose.yml -f compose.admin1101.yaml up -d --no-deps nginx
+docker exec yingyao-static nginx -t
+curl -fIL https://www.yingyaozw.com/
+```
+
+For recovery of an existing stopped container, use `docker start yingyao-static`.

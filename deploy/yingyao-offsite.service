@@ -1,6 +1,9 @@
 [Unit]
 Description=Yingyao Offsite website and pricing API
-After=network-online.target
+After=network-online.target docker.service restore-yingyao-docker-bridge.service
+Requires=docker.service
+Wants=restore-yingyao-docker-bridge.service
+StartLimitIntervalSec=0
 Wants=network-online.target
 
 [Service]
@@ -14,7 +17,7 @@ Environment=PORT=4173
 Environment=PUBLIC_ORIGIN=https://yingyaozw.com
 Environment=PRICING_DB_PATH=/opt/yingyao-offsite/data/pricing.sqlite
 ExecStart=/usr/bin/node server/index.mjs
-Restart=on-failure
+Restart=always
 RestartSec=3
 NoNewPrivileges=true
 ProtectSystem=strict

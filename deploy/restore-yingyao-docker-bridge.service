@@ -1,0 +1,15 @@
+[Unit]
+Description=Restore Yingyao Docker bridge gateway address
+Requires=docker.service
+After=docker.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/restore-yingyao-docker-bridge.sh
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
