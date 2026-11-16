@@ -28,6 +28,6 @@
 
 稿件发布不等于媒体独立推荐，不保证搜索收录或AI引用。没有证据的资质、排名与成果不能写入新闻稿。
 
-网页原文：https://yingyaozw.com/services/pr-media/
+网页原文：https://www.yingyaozw.com/services/pr-media/
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation

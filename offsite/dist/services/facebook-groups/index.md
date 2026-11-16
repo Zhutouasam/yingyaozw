@@ -28,6 +28,6 @@ Facebook群组侧重社群受众与讨论环境，Deal网站侧重优惠信息�
 
 受众规模不能单独证明成交效果。渠道是否接受具体品类、履约方式或优惠条件，须逐项核对。
 
-网页原文：https://yingyaozw.com/services/facebook-groups/
+网页原文：https://www.yingyaozw.com/services/facebook-groups/
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation

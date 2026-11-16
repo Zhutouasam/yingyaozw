@@ -15,7 +15,7 @@
 ```bash
 cd /path/to/new-release/offsite
 npm ci --ignore-scripts
-PUBLIC_ORIGIN=https://yingyaozw.com npm run build
+PUBLIC_ORIGIN=https://www.yingyaozw.com npm run build
 npm run test:backend
 ```
 
@@ -34,13 +34,13 @@ npm run test:backend
 ## 上线检查
 
 ```bash
-curl -I https://yingyaozw.com/
-curl -I https://yingyaozw.com/quote
-curl -I https://yingyaozw.com/services/amazon-offsite/
-curl -I https://yingyaozw.com/services/amazon-offsite
-curl -I https://yingyaozw.com/admin
-curl -fsS https://yingyaozw.com/sitemap.xml
-curl -fsS https://yingyaozw.com/robots.txt
+curl -I https://www.yingyaozw.com/
+curl -I https://www.yingyaozw.com/quote
+curl -I https://www.yingyaozw.com/services/amazon-offsite/
+curl -I https://www.yingyaozw.com/services/amazon-offsite
+curl -I https://www.yingyaozw.com/admin
+curl -fsS https://www.yingyaozw.com/sitemap.xml
+curl -fsS https://www.yingyaozw.com/robots.txt
 ```
 
 实际抓取 HTML 正文检查公司名、各页唯一 title、自身 canonical、JSON-LD。检查资源响应正常、报价可加载、询价单可加入、咨询入口使用真实后台配置；API 不可用时应保留服务说明。未知 URL 应返回 404。浏览器端与不执行 JavaScript 的页面均应能理解业务。
@@ -55,7 +55,7 @@ curl -fsS https://yingyaozw.com/robots.txt
 
 构建额外生成 `llms.txt`、`index.md`、`quote.md` 和四份 `services/*/index.md`，服务端为 Markdown 返回 `text/markdown`。这些是辅助阅读入口，HTML 正文仍是主要公开内容。源码及产物需一起部署；没有数据库迁移或依赖变化。
 
-上线后在仓库根目录运行 `node offsite/scripts/audit-crawl.mjs https://yingyaozw.com`，并按 [参考资料与验证记录](GEO-REFERENCE-20261114.md) 完成真实抓取、索引与引用检查。
+上线后在仓库根目录运行 `node offsite/scripts/audit-crawl.mjs https://www.yingyaozw.com`，并按 [参考资料与验证记录](GEO-REFERENCE-20261114.md) 完成真实抓取、索引与引用检查。
 
 ## 2026-11-14 买家问答表交接
 
@@ -67,4 +67,4 @@ curl -fsS https://yingyaozw.com/robots.txt
 
 `/buyer-qa/` 在构建时读取 `docs/GEO-BUYER-QA.csv` 中 P01–P24 的已确认问答，生成静态 HTML 和 `/buyer-qa/index.md`。构建会校验条数、编号和确认状态。页面正文与 FAQPage 结构化数据使用同一组问答，不包含 AI 实测结果或平台推荐声明。
 
-首页页脚、报价说明和四个服务页提供问答入口，问答按四类服务分组并链接对应服务页。站点地图、llms.txt 和抓取检查也包含问答页。按上述完整构建和后端测试流程验证，随后运行 `node scripts/audit-crawl.mjs <待测服务地址> https://yingyaozw.com` 在发布前验收；上线后使用正式域名再次检查。
+首页页脚、报价说明和四个服务页提供问答入口，问答按四类服务分组并链接对应服务页。站点地图、llms.txt 和抓取检查也包含问答页。按上述完整构建和后端测试流程验证，随后运行 `node scripts/audit-crawl.mjs <待测服务地址> https://www.yingyaozw.com` 在发布前验收；上线后使用正式域名再次检查。

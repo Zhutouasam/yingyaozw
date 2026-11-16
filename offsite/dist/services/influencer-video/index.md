@@ -28,6 +28,6 @@
 
 视频交付不自动包含广告投放、二次剪辑或不限时使用授权。寄样费用与使用范围需要单独确认。
 
-网页原文：https://yingyaozw.com/services/influencer-video/
+网页原文：https://www.yingyaozw.com/services/influencer-video/
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation

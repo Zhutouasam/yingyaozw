@@ -14,8 +14,8 @@
 
 询价时提供产品链接、品类、市场、预算和上线时间。寄样、产品折扣及素材使用等费用须逐项确认，不能默认包含。
 
-实时报价与可用渠道请访问 https://yingyaozw.com/quote ，本文不复制可能变化的价格。
+实时报价与可用渠道请访问 https://www.yingyaozw.com/quote ，本文不复制可能变化的价格。
 
-网页原文：https://yingyaozw.com/quote
+网页原文：https://www.yingyaozw.com/quote
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation

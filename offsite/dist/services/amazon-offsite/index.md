@@ -28,6 +28,6 @@
 
 推广效果受产品、价格、评价、库存、渠道及竞争影响。评估时应分别记录发布完成情况、可获取的访问或归因数据及费用；活动期间总销量不能全部归因于站外推广。安排推广不等于固定销量、自然排名或广告回报。
 
-网页原文：https://yingyaozw.com/services/amazon-offsite/
+网页原文：https://www.yingyaozw.com/services/amazon-offsite/
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation

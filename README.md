@@ -53,7 +53,7 @@ Git.
 
 ## Current production website (荧耀站外)
 
-The apex domain `https://yingyaozw.com` now runs the Offsite Node application.
+The apex domain `https://www.yingyaozw.com` now runs the Offsite Node application.
 The `src/` directory above is the legacy static website, retained for reference.
 
 - Git checkout: `/opt/yingyao-static`
@@ -80,7 +80,7 @@ Build and test the source with Node.js 24 or newer:
 ```bash
 cd offsite
 npm ci
-PUBLIC_ORIGIN=https://yingyaozw.com npm run build
+PUBLIC_ORIGIN=https://www.yingyaozw.com npm run build
 npm run test:backend
 ```
 

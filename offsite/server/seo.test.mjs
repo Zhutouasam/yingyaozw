@@ -17,12 +17,12 @@ async function checkPublicPages(base) {
       assert.equal(response.status, 200, path)
       const html = await response.text()
       assert.match(html, /深圳市荧耀科技有限公司/, path)
-      assert.ok(html.includes(`rel="canonical" href="https://yingyaozw.com${path}"`), path)
+      assert.ok(html.includes(`rel="canonical" href="https://www.yingyaozw.com${path}"`), path)
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
       assert.equal(schemas.length, 1, path)
       assert.ok(JSON.parse(schemas[0][1])['@graph'].some(item => item['@type'] === 'Organization'))
       const graph = JSON.parse(schemas[0][1])['@graph']
-      assert.ok(graph.some(item => item['@type'] === 'WebPage' && item.url === `https://yingyaozw.com${path}`))
+      assert.ok(graph.some(item => item['@type'] === 'WebPage' && item.url === `https://www.yingyaozw.com${path}`))
       assert.match(html, /rel="alternate" type="text\/markdown"/)
       if (path.startsWith('/services/')) {
         assert.ok(graph.some(item => item['@type'] === 'BreadcrumbList'))
@@ -51,7 +51,7 @@ test('GEO 生产路由：原始正文、规范网址、引用数据和私有页�
     await checkPublicPages(base)
     const llms = await (await fetch(base + '/llms.txt')).text()
     assert.match(llms, /深圳市荧耀科技有限公司/)
-    for (const path of paths) assert.ok(llms.includes(`https://yingyaozw.com${path}index.md`))
+    for (const path of paths) assert.ok(llms.includes(`https://www.yingyaozw.com${path}index.md`))
     for (const path of ['/index.md', '/quote.md']) {
       const markdown = await fetch(base + path)
       assert.equal(markdown.status, 200)
@@ -67,7 +67,7 @@ test('GEO 生产路由：原始正文、规范网址、引用数据和私有页�
     assert.equal(service.status, 308)
     assert.equal(service.headers.get('location'), paths[0] + '?from=test')
     const sitemap = await (await fetch(base + '/sitemap.xml')).text()
-    for (const path of paths) assert.ok(sitemap.includes(`https://yingyaozw.com${path}`))
+    for (const path of paths) assert.ok(sitemap.includes(`https://www.yingyaozw.com${path}`))
     assert.doesNotMatch(sitemap, /admin|\/api\/|\.sqlite/)
     assert.match((await fetch(base + '/admin')).headers.get('x-robots-tag'), /noindex/)
     assert.equal((await fetch(base + '/services/missing/', { headers: { Accept: 'text/html' } })).status, 404)
@@ -107,7 +107,7 @@ test('买家问答：24 条确认文案在 HTML、结构化数据与 Markdown �
     const response = await fetch(base + '/buyer-qa/')
     assert.equal(response.status, 200)
     const html = await response.text()
-    assert.ok(html.includes('rel="canonical" href="https://yingyaozw.com/buyer-qa/"'))
+    assert.ok(html.includes('rel="canonical" href="https://www.yingyaozw.com/buyer-qa/"'))
     assert.doesNotMatch(html, /<script[^>]+type="module"/)
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
     const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph']
@@ -131,7 +131,7 @@ test('买家问答：24 条确认文案在 HTML、结构化数据与 Markdown �
       assert.ok(service.includes(`href="/buyer-qa/#${path.split('/')[2]}"`), path)
     }
     assert.ok((await (await fetch(base + '/')).text()).includes('href="/buyer-qa/"'))
-    for (const path of ['/sitemap.xml', '/llms.txt']) assert.ok((await (await fetch(base + path)).text()).includes('https://yingyaozw.com/buyer-qa/'))
+    for (const path of ['/sitemap.xml', '/llms.txt']) assert.ok((await (await fetch(base + path)).text()).includes('https://www.yingyaozw.com/buyer-qa/'))
     const redirect = await fetch(base + '/buyer-qa?from=test', { redirect: 'manual' })
     assert.equal(redirect.status, 308)
     assert.equal(redirect.headers.get('location'), '/buyer-qa/?from=test')

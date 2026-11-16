@@ -1,6 +1,6 @@
 import { brand, company, servicePages, servicePath, procurementFaqs } from './public-content.mjs'
 
-export function resolveOrigin(value = 'https://yingyaozw.com') {
+export function resolveOrigin(value = 'https://www.yingyaozw.com') {
   const url = new URL(value)
   if (!['http:', 'https:'].includes(url.protocol) || url.pathname !== '/' || url.search || url.hash || url.username || url.password) {
     throw new Error('PUBLIC_ORIGIN 须为有效的站点根域名')

@@ -6,10 +6,10 @@
 
 ## 服务
 
-- [亚马逊站外推广服务](https://yingyaozw.com/services/amazon-offsite/): 根据产品品类、目标市场和预算，匹配海外社群、Deal网站及博主推广渠道，合作前确认发布要求、费用及排期。
-- [Facebook群组与Deal网站推广](https://yingyaozw.com/services/facebook-groups/): 面向跨境电商卖家，结合国家、产品品类和优惠条件沟通Facebook群组与Deal网站推广。
-- [红人视频与产品开箱合作](https://yingyaozw.com/services/influencer-video/): 提供产品开箱、体验和使用演示等影响者视频合作，执行前确认寄样、视频形式与素材使用范围。
-- [PR媒体与新闻稿发布服务](https://yingyaozw.com/services/pr-media/): 根据产品主题与受众沟通新闻稿发布渠道，执行前确认稿件要求、费用及发布时间。
+- [亚马逊站外推广服务](https://www.yingyaozw.com/services/amazon-offsite/): 根据产品品类、目标市场和预算，匹配海外社群、Deal网站及博主推广渠道，合作前确认发布要求、费用及排期。
+- [Facebook群组与Deal网站推广](https://www.yingyaozw.com/services/facebook-groups/): 面向跨境电商卖家，结合国家、产品品类和优惠条件沟通Facebook群组与Deal网站推广。
+- [红人视频与产品开箱合作](https://www.yingyaozw.com/services/influencer-video/): 提供产品开箱、体验和使用演示等影响者视频合作，执行前确认寄样、视频形式与素材使用范围。
+- [PR媒体与新闻稿发布服务](https://www.yingyaozw.com/services/pr-media/): 根据产品主题与受众沟通新闻稿发布渠道，执行前确认稿件要求、费用及发布时间。
 
 ## 荧耀站外与深圳市荧耀科技有限公司是什么关系？
 
@@ -27,6 +27,6 @@
 
 推广效果受产品、价格、库存、渠道和竞争等因素影响，不能因安排推广就承诺固定销量或排名。合作应明确可交付的工作与验收方式。
 
-网页原文：https://yingyaozw.com/
+网页原文：https://www.yingyaozw.com/
 
-合作咨询：https://yingyaozw.com/#cooperation
+合作咨询：https://www.yingyaozw.com/#cooperation
