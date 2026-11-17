@@ -3,7 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "engines": { "node": ">=24.0.0" },
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "node --env-file-if-exists=.env scripts/build.mjs",
@@ -14,10 +16,11 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "embla-carousel-react": "8.6.0",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
-  },
-  "devDependencies": {}
+    "vite": "latest",
+    "yet-another-react-lightbox": "3.33.1"
+  }
 }

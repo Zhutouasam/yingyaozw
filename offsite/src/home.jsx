@@ -1,7 +1,7 @@
 import { homeDescription, procurementFaqs, servicePages, servicePath } from '../shared/public-content.mjs'
 import React, { useEffect, useState } from 'react'
 import { ArrowUpRight, Plus, Megaphone, Video, Newspaper, Store } from 'lucide-react'
-import CaseWall from './case-wall.jsx'
+import CaseWall from './customer-gallery.jsx'
 import SiteBrand from './site-brand.jsx'
 import WechatContact from './wechat-contact.jsx'
 import WechatDialog from './wechat-dialog.jsx'
@@ -324,9 +324,9 @@ export default function Home() {
               <h2 id="cases-title">客户沟通与推广反馈</h2>
             </div>
             <p>
-              客户沟通与推广反馈，
+              从发布跟进到推广回访，
               <br />
-              陆续更新。
+              看见每一次合作的反馈。
             </p>
           </header>
           <CaseWall items={catalog?.caseImages} />
