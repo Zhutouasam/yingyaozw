@@ -204,38 +204,40 @@ export default function Home() {
               <ArrowUpRight size={16} />
             </a>
           </header>
-          <nav className="hero-footnote" aria-label="服务详细介绍">
-            {servicePages.map(page => <a key={page.slug} href={servicePath(page)}>{page.title}</a>)}
-          </nav>
-          <div className="home-service-list">
-            {services.map((service) => (
-              <article className="home-service-row" id={`service-${service.id}`} key={service.id}>
-                <span className="home-service-number">
-                  <service.icon size={20} aria-hidden="true" />
-                  <span>{service.number}</span>
-                </span>
-                <div className="home-service-title">
-                  <h3>{service.title}</h3>
-                </div>
-                <div className="home-service-copy">
-                  <p>{service.desc}</p>
-                  <ul aria-label={`${service.title}报价分类`}>
-                    {service.links
-                      .filter(
-                        ([, id]) => !catalog || catalog.categoryMeta.some((category) => category.id === id)
-                      )
-                      .map(([label, id]) => (
-                        <li key={id}>
-                          <a href={linkFor(id)}>
-                            {label}
-                            <ArrowUpRight size={12} />
-                          </a>
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
+          <div className="home-service-content">
+            <nav className="hero-footnote service-details-nav" aria-label="服务详细介绍">
+              {servicePages.map(page => <a key={page.slug} href={servicePath(page)}>{page.title}</a>)}
+            </nav>
+            <div className="home-service-list">
+              {services.map((service) => (
+                <article className="home-service-row" id={`service-${service.id}`} key={service.id}>
+                  <span className="home-service-number">
+                    <service.icon size={20} aria-hidden="true" />
+                    <span>{service.number}</span>
+                  </span>
+                  <div className="home-service-title">
+                    <h3>{service.title}</h3>
+                  </div>
+                  <div className="home-service-copy">
+                    <p>{service.desc}</p>
+                    <ul aria-label={`${service.title}报价分类`}>
+                      {service.links
+                        .filter(
+                          ([, id]) => !catalog || catalog.categoryMeta.some((category) => category.id === id)
+                        )
+                        .map(([label, id]) => (
+                          <li key={id}>
+                            <a href={linkFor(id)}>
+                              {label}
+                              <ArrowUpRight size={12} />
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
         <section id="about" className="home-about" aria-labelledby="about-title">

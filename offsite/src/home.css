@@ -338,6 +338,12 @@ textarea:focus-visible {
   margin-top: 24px;
   color: var(--home-orange);
 }
+.home-service-content {
+  min-width: 0;
+}
+.home-services .service-details-nav {
+  margin: 0 0 20px;
+}
 .home-service-list {
   border-top: 1px solid #d9cfc4;
 }
